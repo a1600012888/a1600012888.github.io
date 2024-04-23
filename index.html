@@ -26,7 +26,7 @@
                   <p style="text-align:center">
                     <name>Tianyuan Zhang 「张天远」</name>
                   </p>
-                  <p>I am a first-year phd student at MIT, advised by <a href="http://billf.mit.edu/"> Prof. Bill
+                  <p>I am a first-year PhD student at MIT EECS, advised by <a href="http://billf.mit.edu/"> Prof. Bill
                       Freeman</a>. Before that, I get my MS in Robotics at CMU, supervised by <a
                       href="http://www.cs.cmu.edu/~srinivas/"> Prof.
                       Srinivasa Narasimhan</a>, and my undergraduate in Peking
@@ -37,13 +37,14 @@
                     <a href="https://hangzhaomit.github.io/"> Prof. Hang Zhao</a>.
                     <br>
                   </p>
-                  <p>
-                    I work on computational imaging, and computer vision.
-                  </p>
                   <p>Email: tianyuan [at] mit [dot] edu
+                    <p>
+                      I acknowledge that information asymmetry can significantly hinder research opportunities for junior students. If you’re interested in chatting about life, research, or potential collaborations, feel free to email me.
+                    </p>
+                    
                   </p>
                   <p style="text-align:center">
-                    <a href="data/cv_nov_2022.pdf">CV</a> &nbsp/&nbsp
+                    <a href="data/cv_oct_2023.pdf">CV</a> &nbsp/&nbsp
                     <a href="https://scholar.google.com/citations?user=uJocZjkAAAAJ&hl=en">Google Scholar</a>
                     &nbsp/&nbsp
                     <a href="https://github.com/a1600012888">Github</a>&nbsp/&nbsp
@@ -65,7 +66,7 @@
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <heading>Research</heading>
                   <p>
-                    I'm interested in physiscs-based vision, computational imaging and computer graphics.
+                    I'm interested in physiscs-based vision, computational imaging and computer graphics, and building AI. 
                   </p>
                 </td>
               </tr>
@@ -74,6 +75,52 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+
+              <tr onmouseout="physdreamer_stop()" onmouseover="physdreamer_start()" bgcolor="#ffffd0">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='impact_img'>
+                      <img src='projects/physdreamer/carnations.gif' height="123" width="184">
+                    </div>
+                    <img src='projects/physdreamer/carnations.gif' height="123" width="184">
+                  </div>
+                  <script type="text/javascript">
+                    function physdreamer_start() {
+                      document.getElementById('impact_img').style.opacity = "1";
+                    }
+
+                    function physdreamer_stop() {
+                      document.getElementById('impact_img').style.opacity = "0";
+                    }
+                    dreamfusion_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <a href="https://physdreamer.github.io/">
+                    <papertitle>PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation</papertitle>
+                  </a>
+                  <br>
+                  <strong>Tianyuan Zhang</strong>,
+                  Hong-Xing "Koven" Yu, Rundi Wu, Brandon Y. Feng,
+                  <br>
+                  Changxi Zheng, Noah Snavely, Jiajun Wu, William T. Freeman.
+                  <br>
+                  <em>Arxiv</em>, 2024
+                  <br>
+                  <a href="https://physdreamer.github.io/">project page</a>
+                  /
+                  <a
+                    href="https://github.com/a1600012888/PhysDreamer">github</a>
+                  /
+                  <a
+                    href="https://arxiv.org/abs/2404.13026">paper</a>
+                  <p></p>
+                  <p>
+                    We bring static 3D objects to life by distilling material parameters from video generation models.
+                  </p>
+                </td>
+              </tr>
+
 
               <tr onmouseout="impact_stop()" onmouseover="impact_start()" bgcolor="#ffffd0">
                 <td style="padding:20px;width:25%;vertical-align:middle">
@@ -143,7 +190,7 @@
                     dreamfusion_stop()
                   </script>
                 </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
+                <td style="padding:20px;width:75%;vertical-align:top">
                   <a href="https://github.com/megvii-research/ECCV2022-RIFE/">
                     <papertitle>Real-Time Intermediate Flow Estimation for Video Frame Interpolation</papertitle>
                   </a>
@@ -473,7 +520,7 @@
                     <br>
                     <br>
                   <div style="float:left;">
-                    Updated at August. 2023
+                    Updated at April. 2024
                   </div>
                   <div style="float:right;">
                     <a href="https://jonbarron.info">Template</a>
