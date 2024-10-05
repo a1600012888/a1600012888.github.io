@@ -26,7 +26,7 @@
                   <p style="text-align:center">
                     <name>Tianyuan Zhang 「张天远」</name>
                   </p>
-                  <p>I am a first-year PhD student at MIT EECS, advised by <a href="http://billf.mit.edu/"> Prof. Bill
+                  <p>I am a second-year PhD student at MIT EECS, advised by <a href="http://billf.mit.edu/"> Prof. Bill
                       Freeman</a>. Before that, I get my MS in Robotics at CMU, supervised by <a
                       href="http://www.cs.cmu.edu/~srinivas/"> Prof.
                       Srinivasa Narasimhan</a>, and my undergraduate in Peking
@@ -38,10 +38,12 @@
                     <br>
                   </p>
                   <p>Email: tianyuan [at] mit [dot] edu
-                    <p>
-                      I acknowledge that information asymmetry can significantly hinder research opportunities for junior students. If you’re interested in chatting about life, research, or potential collaborations, feel free to email me.
-                    </p>
-                    
+                  <p>
+                    I acknowledge that information asymmetry can significantly hinder research opportunities for junior
+                    students. If you’re interested in chatting about life, research, or potential collaborations, feel
+                    free to email me.
+                  </p>
+
                   </p>
                   <p style="text-align:center">
                     <a href="data/cv_oct_2023.pdf">CV</a> &nbsp/&nbsp
@@ -66,7 +68,10 @@
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <heading>Research</heading>
                   <p>
-                    I'm interested in physiscs-based vision, computational imaging and computer graphics, and building AI. 
+                    I'm have research experience in machine learning, physiscs-based vision, computational imaging and
+                    computer graphics.
+                    <br>
+                    My current focus is on video generation and world models.
                   </p>
                 </td>
               </tr>
@@ -105,18 +110,62 @@
                   <br>
                   Changxi Zheng, Noah Snavely, Jiajun Wu, William T. Freeman.
                   <br>
-                  <em>Arxiv</em>, 2024
+                  <em>ECCV</em>, 2024 &nbsp; <font color="red">
+                    <strong>(Oral Presentation) </strong>
+                  </font>
                   <br>
                   <a href="https://physdreamer.github.io/">project page</a>
                   /
-                  <a
-                    href="https://github.com/a1600012888/PhysDreamer">github</a>
+                  <a href="https://github.com/a1600012888/PhysDreamer">github</a>
                   /
-                  <a
-                    href="https://arxiv.org/abs/2404.13026">paper</a>
+                  <a href="https://arxiv.org/abs/2404.13026">paper</a>
                   <p></p>
                   <p>
                     We bring static 3D objects to life by distilling material parameters from video generation models.
+                  </p>
+                </td>
+              </tr>
+
+              <tr onmouseout="physcomp_stop()" onmouseover="physcomp_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='physcomp_image'>
+                      <img src='images/physical_object/PhysComp.png' width="180">
+                    </div>
+                    <img src='images/physical_object/PhysComp.png' width="180">
+                  </div>
+                  <script type="text/javascript">
+                    function physcomp_start() {
+                      document.getElementById('physcomp_image').style.opacity = "1";
+                    }
+
+                    function physcomp_stop() {
+                      document.getElementById('physcomp_image').style.opacity = "0";
+                    }
+                    physcomp_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://gmh14.github.io/phys-comp/">
+                    <papertitle>Physically Compatible 3D Object Modeling from a Single Image
+                    </papertitle>
+                  </a>
+                  <br>
+                  Minghao Guo, Bohan Wang, Pingchuan Ma, <strong>Tianyuan Zhang</strong>,
+                  Crystal Elaine Owens,
+                  <br>
+                  Chuang Gan, Joshua B. Tenenbaum, Kaiming He, Wojciech Matusik
+                  <br>
+                  <em>NeurIPS</em>, 2024 &nbsp; <font color="red">
+                    <strong>(Splotlight) </strong>
+                  </font>
+                  <br>
+                  <a href="https://gmh14.github.io/phys-comp/">project page</a> /
+                  <a href="https://arxiv.org/abs/2405.20510">paper</a> /
+                  <p></p>
+                  <p>
+                    Recostruct 3D physical objects from single images by considering mechanical properties, external
+                    forces, and rest-shape geometry.
                   </p>
                 </td>
               </tr>
@@ -142,7 +191,7 @@
                   </script>
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://tianyuanzhang.com/projects/impactlocalization/">
+                  <a href="https://www.marksheinin.com/impactlocalization">
                     <papertitle>Analyzing Physical Impacts using Transient Surface Wave Imaging</papertitle>
                   </a>
                   <br>
@@ -153,7 +202,7 @@
                   <br>
                   <em>CVPR</em>, 2023
                   <br>
-                  <a href="https://tianyuanzhang.com/projects/impactlocalization/">project page</a>
+                  <a href="https://www.marksheinin.com/impactlocalization">project page</a>
                   /
                   <a
                     href="https://github.com/a1600012888/Analyzing-Physical-Impacts-using-Transient-Surface-Wave-Imaging">github</a>
@@ -520,7 +569,7 @@
                     <br>
                     <br>
                   <div style="float:left;">
-                    Updated at April. 2024
+                    Updated at Oct. 2024
                   </div>
                   <div style="float:right;">
                     <a href="https://jonbarron.info">Template</a>
