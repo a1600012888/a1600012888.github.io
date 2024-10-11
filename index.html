@@ -81,6 +81,50 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
 
+              <tr onmouseout="relitlrm_stop()" onmouseover="relitlrm_start()" bgcolor="#ffffd0">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='impact_img'>
+                      <img src='images/relitlrm/envmap_rotate.gif' height="104" width="184">
+                    </div>
+                    <img src='images/relitlrm/envmap_rotate.gif' height="104" width="184">
+                  </div>
+                  <script type="text/javascript">
+                    function relitlrm_start() {
+                      document.getElementById('impact_img').style.opacity = "1";
+                    }
+
+                    function relitlrm_stop() {
+                      document.getElementById('impact_img').style.opacity = "0";
+                    }
+                    dreamfusion_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <a href="https://relit-lrm.github.io/">
+                    <papertitle>RelitLRM: Generative Relightable Radiance for Large Reconstruction Models</papertitle>
+                  </a>
+                  <br>
+                  <strong>Tianyuan Zhang</strong>,
+                  Zhengfei Kuang, Haian Jin, Zexiang Xu, Sai Bi, Hao Tan, He Zhang,
+                  <br>
+                  Yiwei Hu, Milos Hasan, William T. Freeman, Kai Zhang, Fujun Luan
+                  <br>
+                  <em>arxiv</em>, 2024 &nbsp;
+                  </font>
+                  <br>
+                  <a href="https://relit-lrm.github.io/">project page</a>
+                  /
+                  <a href="https://arxiv.org/abs/2410.06231">paper</a>
+                  <p></p>
+                  <p>
+                    We build a probabilistic inverse rendering model that reconstrcts and relights 3D objects with
+                    sparse
+                    input views.
+                  </p>
+                </td>
+              </tr>
+
               <tr onmouseout="physdreamer_stop()" onmouseover="physdreamer_start()" bgcolor="#ffffd0">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
