@@ -115,7 +115,8 @@
                   <br>
                   <a href="https://relit-lrm.github.io/">project page</a>
                   /
-                  <a href="https://arxiv.org/abs/2410.06231">paper</a>
+                  <a href="https://arxiv.org/abs/2410.06231">paper</a> /
+                  code comming soon
                   <p></p>
                   <p>
                     We build a probabilistic inverse rendering model that reconstrcts and relights 3D objects with
@@ -125,513 +126,565 @@
                 </td>
               </tr>
 
-              <tr onmouseout="physdreamer_stop()" onmouseover="physdreamer_start()" bgcolor="#ffffd0">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='impact_img'>
-                      <img src='projects/physdreamer/carnations.gif' height="123" width="184">
-                    </div>
-                    <img src='projects/physdreamer/carnations.gif' height="123" width="184">
+              <tr bgcolor="#ffffd0"></tr>
+              <!-- <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='lvsm'>
+                    <img src='images/lvsm/lvsm_demo.mp4' height="136" width="184">
                   </div>
-                  <script type="text/javascript">
-                    function physdreamer_start() {
-                      document.getElementById('impact_img').style.opacity = "1";
-                    }
+                  <img src='images/lvsm/lvsm_demo.mp4' height="136" width="184">
+                </div>
+                <script type="text/javascript">
+                  function relitlrm_start() {
+                    document.getElementById('lvsm').style.opacity = "1";
+                  }
 
-                    function physdreamer_stop() {
-                      document.getElementById('impact_img').style.opacity = "0";
-                    }
-                    dreamfusion_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:top">
-                  <a href="https://physdreamer.github.io/">
-                    <papertitle>PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation</papertitle>
-                  </a>
-                  <br>
-                  <strong>Tianyuan Zhang</strong>,
-                  Hong-Xing "Koven" Yu, Rundi Wu, Brandon Y. Feng,
-                  <br>
-                  Changxi Zheng, Noah Snavely, Jiajun Wu, William T. Freeman.
-                  <br>
-                  <em>ECCV</em>, 2024 &nbsp; <font color="red">
-                    <strong>(Oral Presentation) </strong>
-                  </font>
-                  <br>
-                  <a href="https://physdreamer.github.io/">project page</a>
-                  /
-                  <a href="https://github.com/a1600012888/PhysDreamer">github</a>
-                  /
-                  <a href="https://arxiv.org/abs/2404.13026">paper</a>
-                  <p></p>
-                  <p>
-                    We bring static 3D objects to life by distilling material parameters from video generation models.
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="physcomp_stop()" onmouseover="physcomp_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='physcomp_image'>
-                      <img src='images/physical_object/PhysComp.png' width="180">
-                    </div>
-                    <img src='images/physical_object/PhysComp.png' width="180">
+                  function relitlrm_stop() {
+                    document.getElementById('lvsm').style.opacity = "0";
+                  }
+                  dreamfusion_stop()
+                </script>
+              </td> -->
+              <td style="padding:5pt; width:25%; vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="LVSM_image">
+                    <video width="120%" muted="" autoplay="" loop="" playsinline poster="data/loading.gif">
+                      <source src="images/lvsm/lvsm_teaser.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
-                  <script type="text/javascript">
-                    function physcomp_start() {
-                      document.getElementById('physcomp_image').style.opacity = "1";
-                    }
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:top">
+                <a href="https://haian-jin.github.io/projects/LVSM/">
+                  <papertitle>LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias</papertitle>
+                </a>
+                <br>
+                Haian Jin, Hanwen Jiang, Hao Tan, Kai Zhang, Sai Bi, <strong>Tianyuan Zhang</strong>,
+                <br>
+                Fujun Luan, Noah Snavely, Zexiang Xu
+                <br>
+                <em>arxiv</em>, 2024 &nbsp;
+                </font>
+                <br>
+                <a href="https://haian-jin.github.io/projects/LVSM/">project page</a>
+                /
+                <a href="https://arxiv.org/abs/2410.17242">paper</a> /
+                code comming soon
+                <p></p>
+                <p>
+                  Posed Novel view synthesis with minimal 3D inductive bias: color is constant along rays, and pinehole
+                  camera
+                  models.
+                </p>
+              </td>
+      </tr>
 
-                    function physcomp_stop() {
-                      document.getElementById('physcomp_image').style.opacity = "0";
-                    }
-                    physcomp_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://gmh14.github.io/phys-comp/">
-                    <papertitle>Physically Compatible 3D Object Modeling from a Single Image
-                    </papertitle>
-                  </a>
-                  <br>
-                  Minghao Guo, Bohan Wang, Pingchuan Ma, <strong>Tianyuan Zhang</strong>,
-                  Crystal Elaine Owens,
-                  <br>
-                  Chuang Gan, Joshua B. Tenenbaum, Kaiming He, Wojciech Matusik
-                  <br>
-                  <em>NeurIPS</em>, 2024 &nbsp; <font color="red">
-                    <strong>(Splotlight) </strong>
-                  </font>
-                  <br>
-                  <a href="https://gmh14.github.io/phys-comp/">project page</a> /
-                  <a href="https://arxiv.org/abs/2405.20510">paper</a> /
-                  <p></p>
-                  <p>
-                    Recostruct 3D physical objects from single images by considering mechanical properties, external
-                    forces, and rest-shape geometry.
-                  </p>
-                </td>
-              </tr>
+      <tr onmouseout="physdreamer_stop()" onmouseover="physdreamer_start()" bgcolor="#ffffd0">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='impact_img'>
+              <img src='projects/physdreamer/carnations.gif' height="123" width="184">
+            </div>
+            <img src='projects/physdreamer/carnations.gif' height="123" width="184">
+          </div>
+          <script type="text/javascript">
+            function physdreamer_start() {
+              document.getElementById('impact_img').style.opacity = "1";
+            }
 
-
-              <tr onmouseout="impact_stop()" onmouseover="impact_start()" bgcolor="#ffffd0">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='impact_img'>
-                      <img src='images/impact_cvpr_thubnail.gif' height="153" width="184">
-                    </div>
-                    <img src='images/impact_cvpr_thubnail.gif' height="153" width="184">
-                  </div>
-                  <script type="text/javascript">
-                    function impact_start() {
-                      document.getElementById('impact_img').style.opacity = "1";
-                    }
-
-                    function impact_stop() {
-                      document.getElementById('impact_img').style.opacity = "0";
-                    }
-                    dreamfusion_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://www.marksheinin.com/impactlocalization">
-                    <papertitle>Analyzing Physical Impacts using Transient Surface Wave Imaging</papertitle>
-                  </a>
-                  <br>
-                  <strong>Tianyuan Zhang</strong>,
-                  Mark Sheinin, Dorian Chan, Mark Rau,
-                  <br>
-                  Matthew O'Toole, Srinivasa G. Narasimhan.
-                  <br>
-                  <em>CVPR</em>, 2023
-                  <br>
-                  <a href="https://www.marksheinin.com/impactlocalization">project page</a>
-                  /
-                  <a
-                    href="https://github.com/a1600012888/Analyzing-Physical-Impacts-using-Transient-Surface-Wave-Imaging">github</a>
-                  /
-                  <a
-                    href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Analyzing_Physical_Impacts_Using_Transient_Surface_Wave_Imaging_CVPR_2023_paper.pdf">paper</a>
-                  /
-                  <a href="https://youtu.be/qm-3XCkP-XM">videos</a>
-                  <p></p>
-                  <p>
-                    We image the "ripples" on solid surfaces caused by physical impacts, which contain information about
-                    the object's physical properties and its interaction with the environment.
-                    We showcase non-line-of-sight impact localization capabilities.
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="rife_stop()" onmouseover="rife_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='rife_gif'>
-                      <img src='images/rife/rife_demo.gif' height="128" width="184">
-                    </div>
-                    <img src='images/rife/rife_demo.gif' height="128" width="184">
-                  </div>
-                  <script type="text/javascript">
-                    function rife_start() {
-                      document.getElementById('rife_gif').style.opacity = "1";
-                    }
-
-                    function rife_stop() {
-                      document.getElementById('rife_gif').style.opacity = "0";
-                    }
-                    dreamfusion_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:top">
-                  <a href="https://github.com/megvii-research/ECCV2022-RIFE/">
-                    <papertitle>Real-Time Intermediate Flow Estimation for Video Frame Interpolation</papertitle>
-                  </a>
-                  <br>
-                  Zhewei Huang,
-                  <strong>Tianyuan Zhang</strong>,
-                  Wen Heng, Boxin Shi, Shuchang Zhou
-                  <br>
-                  <em>ECCV</em>, 2022
-                  <br>
-                  <a href="https://github.com/megvii-research/ECCV2022-RIFE/">github</a>
-                  /
-                  <a href="https://arxiv.org/abs/2011.06294">arXiv</a>
-                  /
-                  <a href="https://www.youtube.com/results?search_query=rife+interpolation&sp=CAM%253D">demos</a>
-                  <p></p>
-                  <p>
-                    We propose a real-time intermediate flow estimation (RIFE) method for video frame interpolation, it
-                    runs 30+FPS
-                    for 2X 720p interpolation on a 2080Ti GPU
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="sst_stop()" onmouseover="sst_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='sst_image'>
-                      <img src='images/sst/sst.png' width="180">
-                    </div>
-                    <img src='images/sst/sst.png' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function sst_start() {
-                      document.getElementById('sst_image').style.opacity = "1";
-                    }
-
-                    function sst_stop() {
-                      document.getElementById('sst_image').style.opacity = "0";
-                    }
-                    sst_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://github.com/tusen-ai/SST">
-                    <papertitle>Embracing Single Stride 3D Object Detector with Sparse Transformer
-                    </papertitle>
-                  </a>
-                  <br>
-                  Lue Fan, Ziqi Pang,
-                  <strong>Tianyuan Zhang</strong>,
-                  Yu-Xiong Wang, Hang Zhao, Feng Wang, Naiyang Wang, Zhaoxiang Zhang
-                  <br>
-                  <em>CVPR</em>, 2022
-                  <br>
-                  <a href="https://github.com/tusen-ai/SST">github</a> /
-                  <a href="https://arxiv.org/abs/2112.06375">arxiv</a> /
-                  <p></p>
-                  <p>
-                    In contrast to 2D, object size in 3D does not exhibit long-tail distributions. We propose a single
-                    stride sparse Transformer (SST) for 3D object detection. We obtained impressive results on small
-                    objects
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="detr3d_stop()" onmouseover="det3d_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='detr3d_image'>
-                      <img src='images/detr3d/figure_detr3d.png' width="180">
-                    </div>
-                    <img src='images/detr3d/figure_detr3d.png' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function detr3d_start() {
-                      document.getElementById('pnf_image').style.opacity = "1";
-                    }
-
-                    function detr3d_stop() {
-                      document.getElementById('pnf_image').style.opacity = "0";
-                    }
-                    detr3d_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2110.06922">
-                    <papertitle>DETR3D: 3D Object Detection from Multi-view Images via 3D-to-2D Queries</papertitle>
-                  </a> <br>
-                  Yue Wang, Vitor Guizilini*,
-                  <strong>Tianyuan Zhang*</strong>,
-                  Yilun Wang, Hang Zhao, Justin Solomon
-                  <br>
-                  <em>CoRL</em>, 2021
-                  <br>
-                  <a href="https://github.com/WangYueFt/detr3d">github</a> /
-                  <a href="https://arxiv.org/abs/2110.06922">arxiv</a> /
-                  <p>
-                    A new paradigm of 3D object detection from multiview 2D images
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="mutr_stop()" onmouseover="mutr_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='mutr3d_gif'>
-                      <img src='images/mutr3d/mutr3d.gif' width="180">
-                    </div>
-                    <img src='images/mutr3d/mutr3d.gif' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function mutr_start() {
-                      document.getElementById('mutr3d_gif').style.opacity = "1";
-                    }
-
-                    function mutr_stop() {
-                      document.getElementById('mutr3d_gif').style.opacity = "0";
-                    }
-                    dreamfusion_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2205.00613">
-                    <papertitle>MUTR3D: A Multi-camera Tracking Framework via 3D-to-2D Queries</papertitle>
-                  </a>
-                  <br>
-                  <strong>Tianyuan Zhang</strong>,
-                  Xuanyao Chen,
-                  Yue Wang, Yilun Wang, Hang Zhao
-                  <br>
-                  <em>preprint</em>, 2022
-                  <br>
-                  <a href="https://tsinghua-mars-lab.github.io/mutr3d/">project page</a>
-                  /
-                  <a href="https://github.com/a1600012888/MUTR3D">github</a> /
-                  <a href="https://arxiv.org/abs/2205.00613">arXiv</a>
-                  <p></p>
-                  <p>
-                    End-to-End 3D tracking with multiview-cameras
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="malle_stop()" onmouseover="malle_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='futr3d_image'>
-                      <img src='images/futr3d/figure_futr3d.png' width="180">
-                    </div>
-                    <img src='images/futr3d/figure_futr3d.png' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function malle_start() {
-                      document.getElementById('futr3d_image').style.opacity = "1";
-                    }
-
-                    function malle_stop() {
-                      document.getElementById('futr3d_image').style.opacity = "0";
-                    }
-                    malle_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2203.10642">
-                    <papertitle>FUTR3D: A Unified Sensor Fusion Framework for 3D Detection</papertitle>
-                  </a>
-                  <br>
-                  Xuanyao Chen,
-                  <strong>Tianyuan Zhang</strong>,
-                  Yue Wang, Yilun Wang, Hang Zhao
-                  <br>
-                  <em>preprint</em>, 2022
-                  <br>
-                  <a href="https://tsinghua-mars-lab.github.io/futr3d/">project page</a>
-                  /
-                  <a href="https://github.com/Tsinghua-MARS-Lab/futr3d">github</a> /
-                  <a href="https://arxiv.org/abs/2203.10642">arXiv</a>
-                  <p></p>
-                  <p>
-                    A unified framework for 3D detection from multi-sensor data. We achieved impressive results with
-                    multiview-cameras and one-beam LiDAR.
-                  </p>
-                </td>
-              </tr>
-
-              <tr onmouseout="nerfsuper_stop()" onmouseover="nerfsuper_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='obj365_image'>
-                      <img src='images/objects365/figure_objects365.png' width="180">
-                    </div>
-                    <img src='images/objects365/figure_objects365.png' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function nerfsuper_start() {
-                      document.getElementById('obj365_image').style.opacity = "1";
-                    }
-
-                    function nerfsuper_stop() {
-                      document.getElementById('obj365_image').style.opacity = "0";
-                    }
-                    nerfsuper_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://www.objects365.org/overview.html">
-                    <papertitle>Objects365: A Large-scale, High-quality Dataset for Object Detection
-                    </papertitle>
-                  </a>
-                  <br>
-                  Shuai Shao*, Zeming Li*,
-                  <strong>Tianyuan Zhang*</strong>,
-                  Chao Peng*, Gang Yu, Xiangyu Zhang, Jing Li, Jian Sun
-                  <br>
-                  <em>ICCV</em>, 2019
-                  <br>
-                  <a href="https://www.objects365.org/overview.html">project page</a> /
-                  <a
-                    href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Shao_Objects365_A_Large-Scale_High-Quality_Dataset_for_Object_Detection_ICCV_2019_paper.pdf">paper</a>
-                  <p></p>
-                  <p>We provide a <strong>high-quality</strong> large-scale object detection dataset, with 365
-                    categories, 638K images,
-                    and 10,101K bounding boxes</p>
-                </td>
-              </tr>
-
-              <tr onmouseout="refnerf_stop()" onmouseover="refnerf_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='yopo_image'>
-                      <img src='images/yopo/figure_yopo.png' width="180">
-                    </div>
-                    <img src='images/yopo/figure_yopo.png' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function refnerf_start() {
-                      document.getElementById('yopo_image').style.opacity = "1";
-                    }
-
-                    function refnerf_stop() {
-                      document.getElementById('yopo_image').style.opacity = "0";
-                    }
-                    refnerf_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/1905.00877">
-                    <papertitle>You Only Propagate Once: Accelerating Adversarial Training via Maximal Principle
-                    </papertitle>
-                  </a>
-                  <br>
-                  Dinghuai Zhang*,
-                  <strong>Tianyuan Zhang*</strong>,
-                  Yiping Lu*, Zhanxing Zhu, Bin Dong
-                  <br>
-                  <em>NeurIPS</em>, 2019 &nbsp
-                  <br>
-                  <a href="https://arxiv.org/abs/1905.00877">arXiv</a>
-                  /
-                  <a href="https://github.com/a1600012888/YOPO-You-Only-Propagate-Once">code</a>
-                  <p></p>
-                  <p>Accelerating adversarial training using Pontryagin`s Maximum Principle</p>
-                </td>
-              </tr>
-
-              <tr onmouseout="atcnn_stop()" onmouseover="atcnn_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='atcnn_image'>
-                      <img src='images/atcnn/figure_atcnn.png' width="180">
-                    </div>
-                    <img src='images/atcnn/figure_atcnn.png' width="180">
-                  </div>
-                  <script type="text/javascript">
-                    function atcnn_start() {
-                      document.getElementById('atcnn').style.opacity = "1";
-                    }
-
-                    function atcnn_stop() {
-                      document.getElementById('atcnn').style.opacity = "0";
-                    }
-                    atcnn_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/1905.09797">
-                    <papertitle>Interpreting Adversarially Trained Convolutional Neural Networks
-                    </papertitle>
-                  </a>
-                  <br>
-                  <strong>Tianyuan Zhang</strong>,
-                  Zhanxing Zhu
-                  <br>
-                  <em>ICML</em>, 2019
-                  <br>
-                  <a href="https://github.com/PKUAI26/AT-CNN">github</a> /
-                  <a href="https://arxiv.org/abs/1905.09797">arXiv</a>
-                  <p></p>
-                  <p>Discussion on the shape-bias and texture-bias of adversarially trainined convolutional neural
-                    networks</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <heading>Professional Services</heading>
-                  <p>
-                    <strong>Reviewer:</strong> CVPR' 2021,23, NeurIPS' 2020, ICLR' 2021,22,23 BlogPosts.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:0px">
-                  <p font-size:small;>
-                    <br>
-                    <br>
-                  <div style="float:left;">
-                    Updated at Oct. 2024
-                  </div>
-                  <div style="float:right;">
-                    <a href="https://jonbarron.info">Template</a>
-                  </div>
-                  <br>
-                  <div style="float:right;">
-                    Template for photography page comes from <a href="https://chenceshi.com/">this amazing guy</a>
-                  </div>
-                  <br>
-
-                  <br>
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            function physdreamer_stop() {
+              document.getElementById('impact_img').style.opacity = "0";
+            }
+            dreamfusion_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:top">
+          <a href="https://physdreamer.github.io/">
+            <papertitle>PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation</papertitle>
+          </a>
+          <br>
+          <strong>Tianyuan Zhang</strong>,
+          Hong-Xing "Koven" Yu, Rundi Wu, Brandon Y. Feng,
+          <br>
+          Changxi Zheng, Noah Snavely, Jiajun Wu, William T. Freeman.
+          <br>
+          <em>ECCV</em>, 2024 &nbsp; <font color="red">
+            <strong>(Oral Presentation) </strong>
+          </font>
+          <br>
+          <a href="https://physdreamer.github.io/">project page</a>
+          /
+          <a href="https://github.com/a1600012888/PhysDreamer">github</a>
+          /
+          <a href="https://arxiv.org/abs/2404.13026">paper</a>
+          <p></p>
+          <p>
+            We bring static 3D objects to life by distilling material parameters from video generation models.
+          </p>
         </td>
       </tr>
+
+      <tr onmouseout="physcomp_stop()" onmouseover="physcomp_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='physcomp_image'>
+              <img src='images/physical_object/PhysComp.png' width="180">
+            </div>
+            <img src='images/physical_object/PhysComp.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function physcomp_start() {
+              document.getElementById('physcomp_image').style.opacity = "1";
+            }
+
+            function physcomp_stop() {
+              document.getElementById('physcomp_image').style.opacity = "0";
+            }
+            physcomp_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://gmh14.github.io/phys-comp/">
+            <papertitle>Physically Compatible 3D Object Modeling from a Single Image
+            </papertitle>
+          </a>
+          <br>
+          Minghao Guo, Bohan Wang, Pingchuan Ma, <strong>Tianyuan Zhang</strong>,
+          Crystal Elaine Owens,
+          <br>
+          Chuang Gan, Joshua B. Tenenbaum, Kaiming He, Wojciech Matusik
+          <br>
+          <em>NeurIPS</em>, 2024 &nbsp; <font color="red">
+            <strong>(Splotlight) </strong>
+          </font>
+          <br>
+          <a href="https://gmh14.github.io/phys-comp/">project page</a> /
+          <a href="https://arxiv.org/abs/2405.20510">paper</a> /
+          <p></p>
+          <p>
+            Recostruct 3D physical objects from single images by considering mechanical properties, external
+            forces, and rest-shape geometry.
+          </p>
+        </td>
+      </tr>
+
+
+      <tr onmouseout="impact_stop()" onmouseover="impact_start()" bgcolor="#ffffd0">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='impact_img'>
+              <img src='images/impact_cvpr_thubnail.gif' height="153" width="184">
+            </div>
+            <img src='images/impact_cvpr_thubnail.gif' height="153" width="184">
+          </div>
+          <script type="text/javascript">
+            function impact_start() {
+              document.getElementById('impact_img').style.opacity = "1";
+            }
+
+            function impact_stop() {
+              document.getElementById('impact_img').style.opacity = "0";
+            }
+            dreamfusion_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://www.marksheinin.com/impactlocalization">
+            <papertitle>Analyzing Physical Impacts using Transient Surface Wave Imaging</papertitle>
+          </a>
+          <br>
+          <strong>Tianyuan Zhang</strong>,
+          Mark Sheinin, Dorian Chan, Mark Rau,
+          <br>
+          Matthew O'Toole, Srinivasa G. Narasimhan.
+          <br>
+          <em>CVPR</em>, 2023
+          <br>
+          <a href="https://www.marksheinin.com/impactlocalization">project page</a>
+          /
+          <a
+            href="https://github.com/a1600012888/Analyzing-Physical-Impacts-using-Transient-Surface-Wave-Imaging">github</a>
+          /
+          <a
+            href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Analyzing_Physical_Impacts_Using_Transient_Surface_Wave_Imaging_CVPR_2023_paper.pdf">paper</a>
+          /
+          <a href="https://youtu.be/qm-3XCkP-XM">videos</a>
+          <p></p>
+          <p>
+            We image the "ripples" on solid surfaces caused by physical impacts, which contain information about
+            the object's physical properties and its interaction with the environment.
+            We showcase non-line-of-sight impact localization capabilities.
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="rife_stop()" onmouseover="rife_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='rife_gif'>
+              <img src='images/rife/rife_demo.gif' height="128" width="184">
+            </div>
+            <img src='images/rife/rife_demo.gif' height="128" width="184">
+          </div>
+          <script type="text/javascript">
+            function rife_start() {
+              document.getElementById('rife_gif').style.opacity = "1";
+            }
+
+            function rife_stop() {
+              document.getElementById('rife_gif').style.opacity = "0";
+            }
+            dreamfusion_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:top">
+          <a href="https://github.com/megvii-research/ECCV2022-RIFE/">
+            <papertitle>Real-Time Intermediate Flow Estimation for Video Frame Interpolation</papertitle>
+          </a>
+          <br>
+          Zhewei Huang,
+          <strong>Tianyuan Zhang</strong>,
+          Wen Heng, Boxin Shi, Shuchang Zhou
+          <br>
+          <em>ECCV</em>, 2022
+          <br>
+          <a href="https://github.com/megvii-research/ECCV2022-RIFE/">github</a>
+          /
+          <a href="https://arxiv.org/abs/2011.06294">arXiv</a>
+          /
+          <a href="https://www.youtube.com/results?search_query=rife+interpolation&sp=CAM%253D">demos</a>
+          <p></p>
+          <p>
+            We propose a real-time intermediate flow estimation (RIFE) method for video frame interpolation, it
+            runs 30+FPS
+            for 2X 720p interpolation on a 2080Ti GPU
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="sst_stop()" onmouseover="sst_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='sst_image'>
+              <img src='images/sst/sst.png' width="180">
+            </div>
+            <img src='images/sst/sst.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function sst_start() {
+              document.getElementById('sst_image').style.opacity = "1";
+            }
+
+            function sst_stop() {
+              document.getElementById('sst_image').style.opacity = "0";
+            }
+            sst_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://github.com/tusen-ai/SST">
+            <papertitle>Embracing Single Stride 3D Object Detector with Sparse Transformer
+            </papertitle>
+          </a>
+          <br>
+          Lue Fan, Ziqi Pang,
+          <strong>Tianyuan Zhang</strong>,
+          Yu-Xiong Wang, Hang Zhao, Feng Wang, Naiyang Wang, Zhaoxiang Zhang
+          <br>
+          <em>CVPR</em>, 2022
+          <br>
+          <a href="https://github.com/tusen-ai/SST">github</a> /
+          <a href="https://arxiv.org/abs/2112.06375">arxiv</a> /
+          <p></p>
+          <p>
+            In contrast to 2D, object size in 3D does not exhibit long-tail distributions. We propose a single
+            stride sparse Transformer (SST) for 3D object detection. We obtained impressive results on small
+            objects
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="detr3d_stop()" onmouseover="det3d_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='detr3d_image'>
+              <img src='images/detr3d/figure_detr3d.png' width="180">
+            </div>
+            <img src='images/detr3d/figure_detr3d.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function detr3d_start() {
+              document.getElementById('pnf_image').style.opacity = "1";
+            }
+
+            function detr3d_stop() {
+              document.getElementById('pnf_image').style.opacity = "0";
+            }
+            detr3d_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2110.06922">
+            <papertitle>DETR3D: 3D Object Detection from Multi-view Images via 3D-to-2D Queries</papertitle>
+          </a> <br>
+          Yue Wang, Vitor Guizilini*,
+          <strong>Tianyuan Zhang*</strong>,
+          Yilun Wang, Hang Zhao, Justin Solomon
+          <br>
+          <em>CoRL</em>, 2021
+          <br>
+          <a href="https://github.com/WangYueFt/detr3d">github</a> /
+          <a href="https://arxiv.org/abs/2110.06922">arxiv</a> /
+          <p>
+            A new paradigm of 3D object detection from multiview 2D images
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="mutr_stop()" onmouseover="mutr_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='mutr3d_gif'>
+              <img src='images/mutr3d/mutr3d.gif' width="180">
+            </div>
+            <img src='images/mutr3d/mutr3d.gif' width="180">
+          </div>
+          <script type="text/javascript">
+            function mutr_start() {
+              document.getElementById('mutr3d_gif').style.opacity = "1";
+            }
+
+            function mutr_stop() {
+              document.getElementById('mutr3d_gif').style.opacity = "0";
+            }
+            dreamfusion_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2205.00613">
+            <papertitle>MUTR3D: A Multi-camera Tracking Framework via 3D-to-2D Queries</papertitle>
+          </a>
+          <br>
+          <strong>Tianyuan Zhang</strong>,
+          Xuanyao Chen,
+          Yue Wang, Yilun Wang, Hang Zhao
+          <br>
+          <em>preprint</em>, 2022
+          <br>
+          <a href="https://tsinghua-mars-lab.github.io/mutr3d/">project page</a>
+          /
+          <a href="https://github.com/a1600012888/MUTR3D">github</a> /
+          <a href="https://arxiv.org/abs/2205.00613">arXiv</a>
+          <p></p>
+          <p>
+            End-to-End 3D tracking with multiview-cameras
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='futr3d_image'>
+              <img src='images/futr3d/figure_futr3d.png' width="180">
+            </div>
+            <img src='images/futr3d/figure_futr3d.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function malle_start() {
+              document.getElementById('futr3d_image').style.opacity = "1";
+            }
+
+            function malle_stop() {
+              document.getElementById('futr3d_image').style.opacity = "0";
+            }
+            malle_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2203.10642">
+            <papertitle>FUTR3D: A Unified Sensor Fusion Framework for 3D Detection</papertitle>
+          </a>
+          <br>
+          Xuanyao Chen,
+          <strong>Tianyuan Zhang</strong>,
+          Yue Wang, Yilun Wang, Hang Zhao
+          <br>
+          <em>preprint</em>, 2022
+          <br>
+          <a href="https://tsinghua-mars-lab.github.io/futr3d/">project page</a>
+          /
+          <a href="https://github.com/Tsinghua-MARS-Lab/futr3d">github</a> /
+          <a href="https://arxiv.org/abs/2203.10642">arXiv</a>
+          <p></p>
+          <p>
+            A unified framework for 3D detection from multi-sensor data. We achieved impressive results with
+            multiview-cameras and one-beam LiDAR.
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="nerfsuper_stop()" onmouseover="nerfsuper_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='obj365_image'>
+              <img src='images/objects365/figure_objects365.png' width="180">
+            </div>
+            <img src='images/objects365/figure_objects365.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function nerfsuper_start() {
+              document.getElementById('obj365_image').style.opacity = "1";
+            }
+
+            function nerfsuper_stop() {
+              document.getElementById('obj365_image').style.opacity = "0";
+            }
+            nerfsuper_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://www.objects365.org/overview.html">
+            <papertitle>Objects365: A Large-scale, High-quality Dataset for Object Detection
+            </papertitle>
+          </a>
+          <br>
+          Shuai Shao*, Zeming Li*,
+          <strong>Tianyuan Zhang*</strong>,
+          Chao Peng*, Gang Yu, Xiangyu Zhang, Jing Li, Jian Sun
+          <br>
+          <em>ICCV</em>, 2019
+          <br>
+          <a href="https://www.objects365.org/overview.html">project page</a> /
+          <a
+            href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Shao_Objects365_A_Large-Scale_High-Quality_Dataset_for_Object_Detection_ICCV_2019_paper.pdf">paper</a>
+          <p></p>
+          <p>We provide a <strong>high-quality</strong> large-scale object detection dataset, with 365
+            categories, 638K images,
+            and 10,101K bounding boxes</p>
+        </td>
+      </tr>
+
+      <tr onmouseout="refnerf_stop()" onmouseover="refnerf_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='yopo_image'>
+              <img src='images/yopo/figure_yopo.png' width="180">
+            </div>
+            <img src='images/yopo/figure_yopo.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function refnerf_start() {
+              document.getElementById('yopo_image').style.opacity = "1";
+            }
+
+            function refnerf_stop() {
+              document.getElementById('yopo_image').style.opacity = "0";
+            }
+            refnerf_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/1905.00877">
+            <papertitle>You Only Propagate Once: Accelerating Adversarial Training via Maximal Principle
+            </papertitle>
+          </a>
+          <br>
+          Dinghuai Zhang*,
+          <strong>Tianyuan Zhang*</strong>,
+          Yiping Lu*, Zhanxing Zhu, Bin Dong
+          <br>
+          <em>NeurIPS</em>, 2019 &nbsp
+          <br>
+          <a href="https://arxiv.org/abs/1905.00877">arXiv</a>
+          /
+          <a href="https://github.com/a1600012888/YOPO-You-Only-Propagate-Once">code</a>
+          <p></p>
+          <p>Accelerating adversarial training using Pontryagin`s Maximum Principle</p>
+        </td>
+      </tr>
+
+      <tr onmouseout="atcnn_stop()" onmouseover="atcnn_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='atcnn_image'>
+              <img src='images/atcnn/figure_atcnn.png' width="180">
+            </div>
+            <img src='images/atcnn/figure_atcnn.png' width="180">
+          </div>
+          <script type="text/javascript">
+            function atcnn_start() {
+              document.getElementById('atcnn').style.opacity = "1";
+            }
+
+            function atcnn_stop() {
+              document.getElementById('atcnn').style.opacity = "0";
+            }
+            atcnn_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/1905.09797">
+            <papertitle>Interpreting Adversarially Trained Convolutional Neural Networks
+            </papertitle>
+          </a>
+          <br>
+          <strong>Tianyuan Zhang</strong>,
+          Zhanxing Zhu
+          <br>
+          <em>ICML</em>, 2019
+          <br>
+          <a href="https://github.com/PKUAI26/AT-CNN">github</a> /
+          <a href="https://arxiv.org/abs/1905.09797">arXiv</a>
+          <p></p>
+          <p>Discussion on the shape-bias and texture-bias of adversarially trainined convolutional neural
+            networks</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:20px;width:100%;vertical-align:middle">
+          <heading>Professional Services</heading>
+          <p>
+            <strong>Reviewer:</strong> CVPR' 2021,23, NeurIPS' 2020, ICLR' 2021,22,23 BlogPosts.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:0px">
+          <p font-size:small;>
+            <br>
+            <br>
+          <div style="float:left;">
+            Updated at Oct. 2024
+          </div>
+          <div style="float:right;">
+            <a href="https://jonbarron.info">Template</a>
+          </div>
+          <br>
+          <div style="float:right;">
+            Template for photography page comes from <a href="https://chenceshi.com/">this amazing guy</a>
+          </div>
+          <br>
+
+          <br>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </td>
+  </tr>
   </table>
 </body>
 
