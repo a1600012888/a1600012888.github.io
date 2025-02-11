@@ -81,24 +81,16 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
 
-              <tr onmouseout="relitlrm_stop()" onmouseover="relitlrm_start()" bgcolor="#ffffd0">
-                <td style="padding:20px;width:25%;vertical-align:middle">
+              <tr bgcolor="#ffffd0">
+                <td style="padding:5pt; width:25%; vertical-align:middle">
                   <div class="one">
-                    <div class="two" id='impact_img'>
-                      <img src='images/relitlrm/envmap_rotate.gif' height="104" width="184">
+                    <div class="two" id="relitlrm_image">
+                      <video width="120%" muted="" autoplay="" loop="" playsinline poster="data/loading.gif">
+                        <source src="images/relitlrm/small_240p_merged_four_object.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
-                    <img src='images/relitlrm/envmap_rotate.gif' height="104" width="184">
                   </div>
-                  <script type="text/javascript">
-                    function relitlrm_start() {
-                      document.getElementById('impact_img').style.opacity = "1";
-                    }
-
-                    function relitlrm_stop() {
-                      document.getElementById('impact_img').style.opacity = "0";
-                    }
-                    dreamfusion_stop()
-                  </script>
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:top">
                   <a href="https://relit-lrm.github.io/">
