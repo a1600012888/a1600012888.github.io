@@ -1,0 +1,551 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Bounding Box Visualization</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .item {
+                margin: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                width: 300px;
+            }
+            .item img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .caption {
+                padding: 15px;
+                color: #333;
+                font-size: 14px;
+                line-height: 1.4;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bounding Box Visualization</h1>
+        <div class="gallery">
+    
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_1.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snickers bar from a white counter and moves it towards a double sink. The arm then places the snickers bar into the sink. The scene also contains a can of soda, white tile backsplash, and blue cabinets. The camera is static. | Object: a snickers bar (Confidence: 0.58)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_2.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a purple snack from a white kitchen counter and places it inside an open blue upper cabinet. The counter also holds a coffee maker, microwave, sink, and a green can. The camera is static. | Object: a purple snack (Confidence: 0.51)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_3.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a snack from the countertop and puts it in the open upper cabinet. | Object: a snack (Confidence: 0.70)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_4.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange packet from a white counter and moves it towards a double stainless steel sink. The robot places the orange packet into the sink. The sink is set against a tiled wall, with blue cabinets above. The camera is stationary, providing a clear view of the robot's action. | Object: an orange packet (Confidence: 0.41)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_5.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a chocolate bar from a white countertop and puts it into a stainless steel kitchen sink. A can of Sprite, soap, a dispenser, and a bottle of hand sanitizer are visible on the counter near the sink. The camera is static. | Object: a chocolate bar (Confidence: 0.44)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_6.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a stainless steel sink and attempts to pick up a green snack, then places the snack bag on a white countertop. A bag of chips sits on the counter. The camera angle remains fixed. | Object: a green snack bag (Confidence: 0.64)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_7.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a Lays wrapper from a stainless steel kitchen sink and moves it to the left side of the white counter. An orange wall is in the background. The camera is static. | Object: a Lays wrapper (Confidence: 0.54)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_8.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack bag and a lime from a white countertop and places them into a stainless steel double sink. The camera remains static, capturing the actions from a fixed perspective. | Object: a snack bag (Confidence: 0.71)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_9.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a small brown packet from a white countertop and moves it towards a double stainless steel sink, dropping the packet into the left basin. | Object: small brown packet (Confidence: 0.62)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_10.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a red soda can and places it in a stainless steel kitchen sink. | Object: a red soda can (Confidence: 0.58)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_11.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm extends over a stainless steel sink in a kitchen. A protein bar and an orange cup sit on the white countertop. The robot arm lowers and places the protein bar into the sink. The camera is static. | Object: a protein bar (Confidence: 0.56)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_12.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a brown packet and moves it into a stainless steel sink filled with two compartments, all set against a backdrop of white tiled walls and blue cabinets. | Object: brown packet (Confidence: 0.55)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_13.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a brown snack packet from the white countertop and retracts into the open upper cabinet, placing the packet inside. | Object: a brown snack packet (Confidence: 0.58)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_14.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack bar from a white countertop and puts it in the open white cabinet above. The camera is static. Beside the snack bar are a yellow ball, a microwave, a coffee maker, a sink, and a soap dispenser. | Object: a snack bar (Confidence: 0.43)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_15.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a chocolate bar from a white counter with a stainless steel sink, then raises up and places the chocolate bar on a white shelf mounted on an orange wall. A yellow cup also sits on the counter next to the sink. The camera is stationary, capturing the full sequence of actions. | Object: a chocolate bar (Confidence: 0.53)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_16.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches for a snickers bar on a white countertop, picks it up, and moves it to a stainless steel sink. The background features an orange wall with white shelves and a blue cup on the counter. The camera remains stationary. | Object: a snickers bar (Confidence: 0.55)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_17.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper descends into a stainless steel sink, then picks up a snack bar, and lifts it out of the sink. | Object: a snack bar (Confidence: 0.31)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_18.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a small chocolate bar from a kitchen counter and places it inside an overhead cabinet, which it opens to complete the task. | Object: a small chocolate bar (Confidence: 0.59)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_19.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a red bag from a white countertop and moves upward. The arm then places the red bag on a white shelf above a silver sink with a faucet. A brown bag remains on the counter next to the sink. The camera is static. | Object: a red bag (Confidence: 0.83)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_20.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper moves in a kitchen setting with orange wall, reaches into a stainless steel sink, picks up a lays wrapper, and moves it to the left counter. | Object: lays wrapper (Confidence: 0.49)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_21.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a Sprite can from a white countertop with a sink and places it on the left side of a white shelf mounted on an orange wall. | Object: a Sprite can (Confidence: 0.78)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_22.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack bar from a white kitchen counter, then lifts the snack bar and places it inside a blue cabinet above the counter. The arm then retreats. The kitchen features a microwave, a kettle, a soda can, a sink, and various dispensers and soaps, all set against a backdrop of white tiled walls. The camera remains static throughout the action. | Object: a snack bar (Confidence: 0.43)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_23.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a gripper picks up the yellow packet from the kitchen counter and puts it in the open cabinet above. | Object: yellow packet (Confidence: 0.46)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_24.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange can from a white countertop, moves the can over to a silver sink, and places the can in the sink. A green can sits on the counter to the left of the sink. The background includes an orange wall with a white shelf. The camera is static. | Object: orange can (Confidence: 0.70)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_25.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a stainless steel kitchen sink, picks up a green soda can, and lifts it out. The sink is set into a white countertop against an orange wall with white shelves. A red soda can stands on the countertop beside the sink. The camera angle is static. | Object: a green soda can (Confidence: 0.43)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_26.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a stainless steel sink, picks up a green can, moves it out of the sink, and places it on the white countertop next to an orange can. The camera is static, showing a medium shot of the robot arm, sink, and cans against an orange wall with white shelves. | Object: a green can (Confidence: 0.52)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_27.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a blue cup from a white countertop and places it on a white shelf against an orange wall. The countertop also features a sink and a bar. | Object: a blue cup (Confidence: 0.84)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_28.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a protein bar and moves it over to a stainless steel sink, then drops it into the sink. A yellow cup sits next to the sink on a white countertop against an orange wall. | Object: protein bar (Confidence: 0.69)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_29.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a brown candy bar from a white countertop and places it into an open blue cabinet above. The camera is static and captures the scene from a medium distance. | Object: a brown candy bar (Confidence: 0.54)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_30.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a blue snack package from a white counter next to a sink and then moves it towards the sink. A fixed camera captures the side-view action. | Object: a blue snack package (Confidence: 0.89)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_31.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack pack from a white countertop and places it into a blue cupboard above, then retracts. The countertop also features a microwave, a coffee maker, a sink, and a green can. The camera remains stationary throughout the action. | Object: a snack pack (Confidence: 0.75)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_32.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack bar and moves it to a double sink. | Object: a snack bar (Confidence: 0.32)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_33.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper hovers over a stainless steel sink, reaches down, picks up a small chocolate bar from the sink, and lifts it up. A green apple sits on the white countertop next to the sink. The background includes an orange wall with a white shelf. The camera angle remains static throughout the entire action. | Object: a small chocolate bar (Confidence: 0.40)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_34.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm moves towards a can of Coca-Cola and picks it up. It then moves the can over to a sink. The background includes an orange wall with a white shelf. | Object: a can of Coca-Cola (Confidence: 0.58)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_35.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a brown packet from a white countertop and places it into the left basin of a stainless steel double sink. The robot arm then retracts. | Object: a brown packet (Confidence: 0.51)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_36.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack packet from a white countertop and lowers it into a stainless steel double sink. The sink is set against a tiled backsplash and beneath blue cabinets in a kitchen setting. The camera remains static throughout the action. | Object: a snack packet (Confidence: 0.80)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_37.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green snack package from a white counter with a stainless steel sink and an orange wall, then lifts and moves it to the left side of a white shelf attached to the orange wall. | Object: a green snack package (Confidence: 0.68)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_38.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a stainless steel sink, picks up a red Coca-Cola can, lifts it out of the sink, and places it on the white countertop. The action is captured by a stationary camera. | Object: a red Coca-Cola can (Confidence: 0.52)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_39.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a brown snack packet from a white countertop in a kitchen, then lifts the packet and places it inside an open, upper cabinet. | Object: a brown snack packet (Confidence: 0.69)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_40.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a red can and places it into a stainless steel sink. The arm moves towards the sink and deposits the can inside. There is also a bag of chips on the counter beside the sink. The camera is static. | Object: a red can (Confidence: 0.80)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_41.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a candy bar from a white countertop and places it inside a dark blue cabinet above. The camera is static, showing a kitchen setting with a coffee maker, microwave, sink, and various other kitchen items. | Object: a candy bar (Confidence: 0.46)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_42.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a bag of chips from a white counter near a sink and then places the bag of chips onto a white shelf. Afterwards, the robot arm picks up a blue cup from the counter. | Object: a bag of chips (Confidence: 0.87)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_43.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a Snickers bar and places it in a stainless steel sink. The sink is set into a white countertop with a silver faucet. There's a soap dispenser and hand sanitizer on the counter. Above the counter are white tiled walls and blue cabinets. A fixed camera shows the robot arm moving the candy bar. | Object: a Snickers bar (Confidence: 0.42)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_44.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a red can from a white countertop and places it inside a stainless steel sink. The countertop also holds a green cup. The background features an orange wall with a white shelf. | Object: a red can (Confidence: 0.67)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_45.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack pack from a white counter and places it into a stainless steel sink. The sink is surrounded by a white counter with blue cabinets above, captured by a stationary camera. | Object: a snack pack (Confidence: 0.64)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_46.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up the purple object from the counter and puts it on top of the shelf. | Object: the purple object (Confidence: 0.38)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_47.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper descends and grabs a blue snack pack from a stainless steel sink. | Object: a blue snack pack (Confidence: 0.52)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_48.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snack bar from a white countertop and moves it into a stainless steel kitchen sink. The camera remains static. | Object: a snack bar (Confidence: 0.46)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_49.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a brown packet from a white countertop and places it inside a stainless steel sink. The countertop also has a green tennis ball on it. The background features an orange wall with a white shelf. The camera remains static. | Object: a brown packet (Confidence: 0.59)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_50.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper extends over a stainless steel sink with an orange object inside, then carefully picks up the object and moves it out of the sink. The scene is filmed with a static camera in a kitchen setting with an orange wall. | Object: an orange object (Confidence: 0.44)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_51.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a can from a white countertop near a stainless steel sink and then places the can on a white shelf mounted on an orange wall. A green lime remains on the countertop near the sink. A fixed camera captures the action from a medium-distance perspective. | Object: a can (Confidence: 0.59)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_52.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a Sprite can from a white countertop next to a metal sink and places it on a shelf against an orange wall. | Object: a Sprite can (Confidence: 0.73)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_53.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a candy bar from a white countertop in a kitchen and moves it over to a stainless steel sink. | Object: a candy bar (Confidence: 0.53)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_54.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a stainless steel sink to pick up a dark object. The robot arm then lifts the object out of the sink and moves it to place on the white countertop next to the sink. The camera remains static throughout the action. | Object: a dark object (Confidence: 0.43)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_55.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange packet from a white counter top and moves it to place it into a stainless steel sink. The setting includes a green soda can, an orange wall, and white shelves. The camera remains stationary. | Object: an orange packet (Confidence: 0.43)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_56.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a blue Doritos packet from a white countertop and moves it toward a stainless steel double sink, dropping the packet inside the sink. The scene is set in a kitchen with blue cabinets and white tiled walls. The camera is static and captures a wide shot of the action. | Object: a blue Doritos packet (Confidence: 0.83)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_57.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange can and places it into a stainless steel sink on a white countertop. The background features an orange wall and a blue cup. | Object: an orange can (Confidence: 0.64)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_58.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green Sprite can from a white countertop and places it into a stainless steel sink. The scene is set against an orange wall with white shelves. The camera remains static, providing a clear view of the robot's movements. | Object: green Sprite can (Confidence: 0.81)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_59.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a can from a countertop with a sink and then places the can on a shelf. | Object: a can (Confidence: 0.57)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_60.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a bag of Fritos on a white countertop in a kitchen and places it in a cabinet above. | Object: a bag of Fritos (Confidence: 0.85)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_61.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a brown can from a white countertop and places it into a stainless steel sink. The sink is set into the white countertop against an orange wall with a white shelf. A gray cabinet is to the left. | Object: a brown can (Confidence: 0.67)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_62.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper extends and picks up a green Sprite can from a white countertop, then lowers the can into a stainless steel sink. The scene is filmed with a static camera. | Object: a green Sprite can (Confidence: 0.71)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_63.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a snack from the countertop and puts it in the open upper cabinet. | Object: a snack (Confidence: 0.70)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_64.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm extends with its black gripper hovering above a white countertop that holds a green can, a bag, and a stainless steel sink. The robot arm moves and drops the can into the sink, captured by a fixed camera. | Object: a green can (Confidence: 0.67)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_65.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange can from the counter and raises the can up to place it on the shelf. The camera angle is static. | Object: an orange can (Confidence: 0.62)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_66.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a candy bar from the white countertop and moves it into the stainless steel sink. | Object: a candy bar (Confidence: 0.47)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_67.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm extends towards a metal sink on a white countertop and picks up a red soda can. The robot arm then moves away from the sink with the can in its grasp. The sink is surrounded by an orange wall. A bag of Doritos sits on the counter next to the sink. The camera is static. | Object: a red soda can (Confidence: 0.53)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_68.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green snack bag from a white countertop and places it on a white shelf against an orange wall, above a stainless steel sink. | Object: a green snack bag (Confidence: 0.87)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_69.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a pack of fritos from a white countertop in a kitchen. The robot arm then lifts the pack of fritos and places it on the bottom shelf of the blue cabinet above the countertop. The scene is filmed from a fixed camera angle. | Object: a pack of fritos (Confidence: 0.77)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_70.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green object from a white countertop, moves up and places the object on the left side of the first shelf on an orange wall. | Object: a green object (Confidence: 0.58)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_71.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green can and puts it in the sink. | Object: a green can (Confidence: 0.60)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_72.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a crumpled bag of chips from a stainless steel sink and places it on the white countertop. Next to the sink, a green cup stands, all set against a background of an orange wall and a white shelf. The camera provides a static, wide shot of the scene. | Object: bag of chips (Confidence: 0.50)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_73.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a red bag from a countertop and places it into a stainless steel sink. The camera is stationary. | Object: a red bag (Confidence: 0.64)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_74.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into the stainless steel sink and removes a can of Coca-Cola from the sink, on the orange backsplash wall. | Object: a can of Coca-Cola (Confidence: 0.39)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_75.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a candy bar from a white countertop in a kitchen setting and lifts it up, then places the candy bar into an open blue cabinet above. The camera is static. | Object: a candy bar (Confidence: 0.50)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_76.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a small orange can from a white countertop. The arm lifts the can and places it on a white shelf against an orange wall. A stainless steel sink and a green lime are also on the countertop. | Object: orange can (Confidence: 0.76)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_77.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange packet from a white countertop and moves it towards a double sink. The robot arm drops the orange packet into the left sink basin. A fixed side-view camera captures the action. | Object: an orange packet (Confidence: 0.70)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_78.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange can from a white countertop and places it into a stainless steel sink. The sink has a silver faucet and is set against an orange wall. A blue cup is next to the can on the countertop. | Object: an orange can (Confidence: 0.60)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_79.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a purple packet and moves to place it in a stainless steel sink. The sink sits in a kitchen setting with a orange wall and white shelf behind the sink. The camera is static. | Object: a purple packet (Confidence: 0.63)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_80.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper moves over a kitchen counter, picks up a green packet, moves to the left, and drops the packet into the left sink basin. The camera is static. | Object: a green packet (Confidence: 0.73)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_81.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches from the left to pick up a green soda can from the white counter. The arm moves the can towards a stainless steel sink, pauses, and then places the can into the sink. The camera is static. | Object: a green soda can (Confidence: 0.67)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_82.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a candy bar from a white countertop in a kitchen and places it in an open blue cabinet above. | Object: a candy bar (Confidence: 0.53)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_83.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a red can and puts it into a stainless steel sink. | Object: red can (Confidence: 0.80)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_84.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a snickers bar from the white countertop next to a green cup and the kitchen sink. The arm retracts and extends towards the orange wall and places the snickers bar on the left side of the bottom shelf. | Object: a snickers bar (Confidence: 0.49)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_85.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a snack pack from a stainless steel sink, then places it on the left side of a white kitchen counter. The background includes an orange wall and white shelves. | Object: a snack pack (Confidence: 0.63)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_86.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a chocolate bar from a white countertop and places it on a white shelf on an orange wall. The camera angle is static. | Object: a chocolate bar (Confidence: 0.57)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_87.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with black gripper descends into a stainless steel sink to pick up a purple candy bar. The backdrop features an orange wall and a white shelf. The camera is stationary. | Object: a purple candy bar (Confidence: 0.48)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_88.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a yellow packet and places it inside an open cabinet above the countertop. | Object: a yellow packet (Confidence: 0.57)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_89.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green chips packet from a white countertop next to a silver sink and an orange soda can, then places the chips packet onto a white shelf on an orange wall. A fixed side-view camera captures the action. | Object: a green chips packet (Confidence: 0.89)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_90.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange snack bag and places it in a stainless steel sink. The camera is static. | Object: orange snack bag (Confidence: 0.79)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_91.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a stainless steel sink containing a can of Coca-Cola. The robot arm grabs the can with its gripper, lifts the can out of the sink, and then places the can on the white countertop next to a yellow ball. The camera is static. | Object: a can of Coca-Cola (Confidence: 0.41)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_92.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green packet from a white countertop and moves it over to the left side of a double stainless steel sink, then drops the packet into the sink. The camera is stationary and shows a kitchen setting with blue cabinets and white tiled walls. | Object: a green packet (Confidence: 0.74)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_93.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a purple protein bar packet and moves it into a stainless steel sink. The sink is set in a white countertop against an orange wall. | Object: a purple protein bar packet (Confidence: 0.88)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_94.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a white and orange object from the counter and puts it in the cabinet above. | Object: white and orange object (Confidence: 0.46)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_95.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a chocolate bar from a white countertop in a kitchen, then moves the chocolate bar upwards and into a blue cabinet, releasing it inside. The arm then retracts back to its original position. The scene also includes a microwave, coffee maker, sink, and a can of Sprite on the counter. | Object: a chocolate bar (Confidence: 0.38)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_96.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a purple object from the counter and puts it on top of the shelf. | Object: a purple object (Confidence: 0.35)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_97.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange packet from a white countertop and places it inside a stainless steel double sink. The countertop also has a soda can and a soap dispenser. The cabinets above are blue. The camera is static. | Object: an orange packet (Confidence: 0.52)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_98.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green packet from a white countertop in a kitchen and places it inside an open blue-and-white cabinet above the counter. The camera is static, capturing the scene from a medium distance. | Object: a green packet (Confidence: 0.83)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_99.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up an orange packet from a white countertop and moves it over to the left sink, then drops the packet into the sink. A fixed camera captures the action. | Object: an orange packet (Confidence: 0.78)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_droid/img_100.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a candy bar from a white countertop, moves over a double-basin sink, and drops the candy bar into the sink. | Object: a candy bar (Confidence: 0.57)</div>
+            </div>
+        
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,301 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Bounding Box Visualization</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .item {
+                margin: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                width: 300px;
+            }
+            .item img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .caption {
+                padding: 15px;
+                color: #333;
+                font-size: 14px;
+                line-height: 1.4;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bounding Box Visualization</h1>
+        <div class="gallery">
+    
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_1.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm lifts a box of cranberry cookies and places it into the shopping cart below. | Object: a box of cranberry cookies (Confidence: 0.67)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_2.jpg" alt="Frame with bounding box">
+                <div class="caption">A black and grey robotic arm picks up a boxed chocolate cookies from a wire shopping cart; the cart is positioned in front of a shelf stocked with various boxes of cookies and treats; the robotic arm retracts, placing the boxed cookies back into the shopping cart. | Object: boxed chocolate cookies (Confidence: 0.33)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_3.jpg" alt="Frame with bounding box">
+                <div class="caption">Two black robotic arms with grippers pick up a boxed chocolate cookies from a shelf stocked with various snacks and place it into a metal shopping cart below. | Object: boxed chocolate cookies (Confidence: 0.32)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_4.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm with a black gripper reaches toward a shelf stocked with snack foods, and picks up a box of cookies before retracting, while a shopping cart waits below. | Object: a box of cookies (Confidence: 0.37)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_5.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a shelf stocked with various packaged snacks, picks up a package of snow cakes, moves over a shopping cart, and drops the package into the cart, alongside another similar package already inside. Another black robot arm with a black gripper is holding the shopping cart. The camera angle is a low, static, point-of-view shot from inside the shopping cart. | Object: a package of snow cakes (Confidence: 0.47)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_6.jpg" alt="Frame with bounding box">
+                <div class="caption">From a first-person perspective, robotic arms extend towards a shelf stocked with snacks, with a shopping cart below. One robotic arm reaches for a box of cookies on the right side of the shelf. | Object: a box of cookies (Confidence: 0.36)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_7.jpg" alt="Frame with bounding box">
+                <div class="caption">Two black robot arms with gray grippers extend towards a shelf full of snacks and cookies, attempting to grab a box of cookies, above a shopping cart. The robot arm on the right side changes to a white arm. | Object: a box of cookies (Confidence: 0.35)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_8.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms with black grippers reach out to grab a box of Danisa Cranberry cookies from a shelf and move them towards a shopping cart. | Object: a box of Danisa Cranberry cookies (Confidence: 0.69)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_9.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a bag of "bibizant" peanuts from a shelf filled with various snacks and puts it into a shopping cart. | Object: a bag of peanuts (Confidence: 0.42)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_10.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches for a red package hanging on a shelf in a store, then the gripper picks up the package and puts it into a shopping cart. | Object: a red package (Confidence: 0.52)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_11.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm lowers and places a white bag of "bibizan longyan peanuts" into a silver shopping cart. | Object: a white bag of "bibizan longyan peanuts" (Confidence: 0.70)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_12.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms with black grippers are shown shopping. The arm on the right side picks up a plastic package of snow cakes from a shelf lined with snacks and places it into the shopping cart below. | Object: a plastic package of snow cakes (Confidence: 0.39)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_13.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm picks up a cup of jelly from a shelf and places it into a shopping cart below. | Object: a cup of jelly (Confidence: 0.47)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_14.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms, equipped with black grippers, extend to retrieve items from a shelf stocked with various snacks and sweets; the robotic arms move towards a box of cookies, then retreat, failing to grasp the object, all while positioned above a shopping cart. | Object: a box of cookies (Confidence: 0.39)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_15.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms extend towards a shelf stocked with boxes of cookies, with a shopping cart positioned underneath; the arm on the right reaches and picks up a box of Danisa cranberry cookies and retrieves from the shelf. | Object: a box of Danisa cranberry cookies (Confidence: 0.70)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_16.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a red package of spicy strips from a shelf stocked with various snacks and places it into a wire shopping cart. | Object: a red package (Confidence: 0.62)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_17.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms with grippers are positioned on either side of a shopping cart. The robotic arm on the right picks up a package of cookies from a shelf stocked with other food items and places it into the shopping cart below. The camera remains static throughout the action. | Object: a package of cookies (Confidence: 0.31)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_18.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms extend and grasp a Panettone box from a shelf stocked with other food products above a shopping cart, and the arms retract. | Object: Panettone box (Confidence: 0.34)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_19.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches toward a shelf stocked with various snack packages, selects a bag of peanuts, and places it into a small shopping cart. The camera remains static throughout the action. | Object: a bag of peanuts (Confidence: 0.36)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_20.jpg" alt="Frame with bounding box">
+                <div class="caption">Two black robot arms extend towards a shelf stocked with various snacks and pastries, with a shopping cart positioned below. One robot arm reaches towards a box of cookies on the upper shelf. | Object: a box of cookies (Confidence: 0.40)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_21.jpg" alt="Frame with bounding box">
+                <div class="caption">A black and white robot arm places a pink boxed chocolate cookies into a shopping cart containing other snacks. The shopping cart is in front of a shelf with rows of boxed juice. | Object: a pink boxed chocolate cookies (Confidence: 0.37)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_22.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms with black grippers extend towards a shelf filled with various boxes of cookies and snacks above a shopping cart; the right robot arm grasps a Danisa Cranberry cookie box and pulls it towards the shopping cart. | Object: a Danisa Cranberry cookie box (Confidence: 0.59)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_23.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm extends its gripper to select a box of cookies from a shelf, against the backdrop of a shopping cart. | Object: a box of cookies (Confidence: 0.36)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_24.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a bag of snow cakes from a store shelf and drops it into a metal shopping cart. | Object: a bag of snow cakes (Confidence: 0.50)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_25.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms extend, each with a black gripper, reaching toward a shelf stocked with boxes of snacks; the right arm selects a yellow box, grasps it, and withdraws it, placing it in a shopping cart below. | Object: a yellow box (Confidence: 0.59)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_26.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a bag of 'longyan peanuts' from a shelf filled with various snacks and places it into a wire shopping cart. | Object: a bag of 'longyan peanuts' (Confidence: 0.35)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_27.jpg" alt="Frame with bounding box">
+                <div class="caption">A black and grey robot arm with gripper places a bag of snow cake into a shopping cart. The shelves behind display various snack products in boxes and bags. A second robot arm and the shopping cart are visible. The camera is static and shot at high angle. | Object: bag of snow cake (Confidence: 0.45)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_28.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms reach towards a shelf stocked with boxes of biscuits and other snack items above a shopping cart. The robot arms extend, attempt to grasp, and ultimately retrieve a box of 'Danisa Cranberry' cookies, placing it into the shopping cart below. The camera is static, offering a full view of the robot arms, shelf, and cart. | Object: a box of 'Danisa Cranberry' cookies (Confidence: 0.57)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_29.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper picks up a green package labeled "bibizant" of longyan peanuts from a shelf stocked with snacks and drops it into a wire shopping cart. | Object: green package (Confidence: 0.62)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_30.jpg" alt="Frame with bounding box">
+                <div class="caption">A black robot arm picks a box of cookies from the shelf and places it into a shopping cart, then a white robot arm picks another box of cookies from the shelf and places it into the same shopping cart. The cart contains several boxes of the same cookies. The camera's perspective is from inside the shopping cart. | Object: a box of cookies (Confidence: 0.40)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_31.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a bag of longyan peanuts from a shelf full of snacks and drops it into a shopping cart. | Object: a bag of longyan peanuts (Confidence: 0.33)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_32.jpg" alt="Frame with bounding box">
+                <div class="caption">A black robot arm with gripper picks up a package of snow cakes from a shelf, then moves and drops the package into a shopping cart. The camera shows the action from an overhead view, with the shelf stocked with various snacks and treats. After placing the snow cakes, the robot arm retracts. | Object: package of snow cakes (Confidence: 0.48)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_33.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms each pick up a box of cranberry cookies from a shelf and place it into a shopping cart below. The robot arms then retract. | Object: cranberry cookies (Confidence: 0.50)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_34.jpg" alt="Frame with bounding box">
+                <div class="caption">A black robot arm picks up a bag of snow cakes and places it into a shopping cart. | Object: a bag of snow cakes (Confidence: 0.69)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_35.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms work in tandem to fill a shopping cart with items from a shelf; the right robot arm grips a box of Danisa Cranberry cookies and places it into the shopping cart below. | Object: a box of Danisa Cranberry cookies (Confidence: 0.75)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_36.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm extends, using its black gripper to grab a bag of bibizan peanuts from a shelf full of snacks and places it into a nearby shopping basket. | Object: a bag of bibizan peanuts (Confidence: 0.42)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_37.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm with a black gripper picks up a yellow boxed chocolate cookie and places it into a metal shopping cart, captured from a high-angle, static shot. | Object: a yellow boxed chocolate cookie (Confidence: 0.46)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_38.jpg" alt="Frame with bounding box">
+                <div class="caption">Two black robot arms with grippers reach out towards a shelf stocked with boxes of colorful snacks, then one of the robot arms grabs a yellow box and pulls it off the shelf into the shopping cart. | Object: yellow box (Confidence: 0.60)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_39.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm with a gripper picks up a package of snow cake from a shelf in a store and puts it into a shopping cart. | Object: package of snow cake (Confidence: 0.44)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_40.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm picks up a bag of "bibizan longyan peanuts" from a shelf stocked with various snacks and places it into a shopping cart. | Object: a bag of "bibizan longyan peanuts" (Confidence: 0.54)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_41.jpg" alt="Frame with bounding box">
+                <div class="caption">A robot arm with a black gripper picks up a bag of snow cakes from a shelf and places it into a shopping cart. The camera angle is slightly high, capturing the entire scene. | Object: a bag of snow cakes (Confidence: 0.48)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_42.jpg" alt="Frame with bounding box">
+                <div class="caption">A robotic arm picks up a bag of snow cake from the shelf and puts it into a shopping cart. | Object: a bag of snow cake (Confidence: 0.42)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_43.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper extends to pick up a bag of peanuts labeled "bibizan" from a shelf filled with various snacks and places it in a metal shopping cart below. | Object: a bag of peanuts (Confidence: 0.37)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_44.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms, one white and one black, each with a gripper, pick up a box of Danisa Cranberry cookies from a shelf stocked with various cookie boxes and place it into a shopping cart below. | Object: a box of Danisa Cranberry cookies (Confidence: 0.73)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_45.jpg" alt="Frame with bounding box">
+                <div class="caption">A black and silver robot arm picks up a plastic bag of snow cakes from a shelf and places it into a shopping cart, while another robot arm is installed on the other side of the shopping cart, the camera is static. | Object: a plastic bag (Confidence: 0.47)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_46.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper reaches into a shelf filled with snack foods. The gripper grabs a white bag of "bibizanttttt" peanuts and moves it towards a small shopping cart. The camera is static. | Object: a white bag of peanuts (Confidence: 0.46)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_47.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robot arms with black grippers extend towards a shelf stocked with food items, including a box of "Danisa Cranberry" cookies. The grippers reach for the cookie box, and a shopping cart sits below, ready to receive items retrieved from the shelf. | Object: a box of "Danisa Cranberry" cookies (Confidence: 0.69)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_48.jpg" alt="Frame with bounding box">
+                <div class="caption">A black robotic arm extends toward a shelf stocked with snacks and packaged foods, its gripper opening to grasp a red and white bag of goods, then retracting and lowering the item into a shopping cart below. | Object: a red and white bag (Confidence: 0.34)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_49.jpg" alt="Frame with bounding box">
+                <div class="caption">Two robotic arms, equipped with black grippers, are positioned in front of a shelf stocked with various boxes of goods; the right robot arm grasps a yellow box from the shelf and moves it toward a shopping cart situated beneath the shelf. | Object: a yellow box (Confidence: 0.59)</div>
+            </div>
+        
+            <div class="item">
+                <img src="https://huggingface.co/datasets/YunjinZhang/eiwm_data_bbox_viz/resolve/main/bbox_viz_agibot_world/img_50.jpg" alt="Frame with bounding box">
+                <div class="caption">A white robot arm with a black gripper extends towards a shelf of snacks and picks up a bag of "bibizant" peanuts and then place the bag into a metal shopping cart. | Object: a bag of "bibizant" peanuts (Confidence: 0.53)</div>
+            </div>
+        
+        </div>
+    </body>
+    </html>
+    
