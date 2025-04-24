@@ -1,0 +1,2581 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Video Bounding Box Visualization</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            .video-container {
+                margin: 20px;
+                padding: 20px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .video-title {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            video {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border: 1px solid #ddd;
+            }
+            .captions-container {
+                margin-top: 20px;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 4px;
+            }
+            .captions-container h2 {
+                margin-top: 0;
+                color: #333;
+                font-size: 16px;
+            }
+            .caption {
+                margin-bottom: 15px;
+            }
+            .caption-type {
+                font-weight: bold;
+                color: #666;
+                margin-bottom: 5px;
+            }
+            .caption p {
+                margin: 0;
+                line-height: 1.4;
+            }
+            .object-description {
+                font-style: italic;
+                color: #666;
+                margin-top: 10px;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 30px;
+            }
+            .direct-link {
+                font-size: 12px;
+                margin-top: 10px;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Video Bounding Box Visualization</h1>
+    
+        <div id="video-1" class="video-container">
+            <div class="video-title">1. clip_4193.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4193.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4193.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves around a toy kitchen, with a stove, sink, and various toy foods, pots, pans, and utensils. The arm turns a lever on the front of the kitchen set.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>turn lever vertical to front distractors</p>
+                </div>
+                <div class="object-description">
+                    Object: lever
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-2" class="video-container">
+            <div class="video-title">2. clip_19.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_19.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_19.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a silver spoon and moves it to another side of a light brown wooden surface. The table also has a folded orange cloth, a small silver bowl and a white ball with a black band on it. The camera is fixed, capturing the action from a high angle.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>PICK UP THE SPOON AND PUT ANOTHER SIDE OF THE TABLE</p>
+                </div>
+                <div class="object-description">
+                    Object: a spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-3" class="video-container">
+            <div class="video-title">3. clip_7458.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7458.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7458.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper moves to a silver pan inside a cardboard fence on a toy stove, picks up a green broccoli floret from the pan, and lifts it out.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>take broccoli out of pan cardboardfence</p>
+                </div>
+                <div class="object-description">
+                    Object: cardboard fence
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-4" class="video-container">
+            <div class="video-title">4. clip_10434.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10434.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10434.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm reaches down and flips a pink cup upright in a light blue sink. A white dish rack is in the background. A fixed camera captures the scene from above.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>flip cup upright</p>
+                </div>
+                <div class="object-description">
+                    Object: a cup
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-5" class="video-container">
+            <div class="video-title">5. clip_7058.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7058.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7058.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person moves a yellow spoon from the middle of a brown counter to the front of a light blue toy microwave. The counter also holds a pot, a cloth, a can of tomato sauce, and a can of pineapple slices, next to a toy stovetop. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move spoon to the front of the microwave.</p>
+                </div>
+                <div class="object-description">
+                    Object: spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-6" class="video-container">
+            <div class="video-title">6. clip_424.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_424.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_424.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm reaches for a blue brush on a light brown wooden surface. The arm clamps the brush. A red dome, a silver bowl, and a blue cloth sit on the table. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Pick up the blue brush on the near left edge of the table</p>
+                </div>
+                <div class="object-description">
+                    Object: blue brush
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-7" class="video-container">
+            <div class="video-title">7. clip_14797.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14797.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14797.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a silver bowl from a wooden surface with a red strawberry and a green tool, then places the bowl onto an orange towel.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put the bowl on the towel</p>
+                </div>
+                <div class="object-description">
+                    Object: the bowl
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-8" class="video-container">
+            <div class="video-title">8. clip_3532.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3532.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3532.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves toward an orange cloth placed on a counter next to a metal bowl. The arm picks up the orange cloth. The arm moves away from the bowl.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the orange cloth under the carrot</p>
+                </div>
+                <div class="object-description">
+                    Object: orange cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-9" class="video-container">
+            <div class="video-title">9. clip_1453.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1453.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1453.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a red spoon attachment pivots and extends over a kitchen counter, moving the red spoon to the far edge of the table, next to a saucepan with food and cans of pineapple. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the red spoon at the far edge of the table</p>
+                </div>
+                <div class="object-description">
+                    Object: a red spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-10" class="video-container">
+            <div class="video-title">10. clip_14131.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14131.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14131.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up a yellow toy knife from a wooden-patterned countertop. The arm moves and places the knife onto a folded purple cloth. The countertop also holds a wedge of yellow toy cheese and a metal can. The camera maintains a stationary, high-angle shot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Placce the knife onto the black cloth.</p>
+                </div>
+                <div class="object-description">
+                    Object: black cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-11" class="video-container">
+            <div class="video-title">11. clip_7554.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7554.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7554.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A green plastic fruit sits on a black toy stove top next to a purple towel and a silver pot. A person's hand reaches into the scene and moves a yellow brush to the left of the purple towel on the stove top. The camera angle is above and static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the yellow brush to the left of the purple towel</p>
+                </div>
+                <div class="object-description">
+                    Object: a yellow brush
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-12" class="video-container">
+            <div class="video-title">12. clip_8833.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8833.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8833.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves a silver pot towards an orange towel on a light brown surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the pot on top of the orange towel</p>
+                </div>
+                <div class="object-description">
+                    Object: orange towel
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-13" class="video-container">
+            <div class="video-title">13. clip_5572.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5572.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5572.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a gray spatula and places it on a green cutting board.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put spatula on cutting board</p>
+                </div>
+                <div class="object-description">
+                    Object: cutting board
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-14" class="video-container">
+            <div class="video-title">14. clip_11089.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_11089.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_11089.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a yellow corn from a silver bowl on a wooden surface. The arm moves the corn, placing it on a blue cloth with a silver spoon in the bottom left corner of the table.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the corn in the bottom left corner of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: corn
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-15" class="video-container">
+            <div class="video-title">15. clip_14987.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14987.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14987.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A toy kitchen stove with a silver pan on it is shown, and a hand reaches into the pan to take broccoli out of the pan.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>take broccoli out of pan</p>
+                </div>
+                <div class="object-description">
+                    Object: broccoli
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-16" class="video-container">
+            <div class="video-title">16. clip_5998.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5998.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5998.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A silver robot arm picks up a small spoon from a white basket full of silverware and puts it into a black tray with several empty slots.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put small spoon from basket to tray</p>
+                </div>
+                <div class="object-description">
+                    Object: a small spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-17" class="video-container">
+            <div class="video-title">17. clip_14649.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14649.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14649.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves to pick up a stainless steel bowl resting on a blue cloth. The robot arm lifts the bowl and places it on the right side of the blue cloth. The camera angle is from above and remains static throughout the action.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Pick the vessel from the top of the blue cloth   and place it  on right side of vessel.</p>
+                </div>
+                <div class="object-description">
+                    Object: a blue cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-18" class="video-container">
+            <div class="video-title">18. clip_8916.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8916.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8916.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm extends and attempts to grasp a small orange croissant shaped toy on a wooden countertop. The camera remains static, capturing the arm's movements. The robot arm fails to pick up the toy, and it slides slightly on the surface. Cans of "Tomato Sauce" and "Pineapple Slices" are visible nearby.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the croissant in the pot.</p>
+                </div>
+                <div class="object-description">
+                    Object: croissant
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-19" class="video-container">
+            <div class="video-title">19. clip_16251.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_16251.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_16251.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand moves a yellow toy brush from the left side to the right side of a black toy stove top.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move brush to right side of stove top</p>
+                </div>
+                <div class="object-description">
+                    Object: brush
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-20" class="video-container">
+            <div class="video-title">20. clip_13722.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13722.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13722.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A white robot arm with a black gripper picks up a pink plastic beet and places it into a small orange pot inside a gray plastic sink. The sink is part of a toy kitchen set, which also includes a stovetop with two red burners, a purple cupcake in a pink cup, and a green broccoli floret. The camera is static, showing a close-up view of the toy kitchen area.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put beet in pot sink</p>
+                </div>
+                <div class="object-description">
+                    Object: beet
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-21" class="video-container">
+            <div class="video-title">21. clip_13073.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13073.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13073.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves a green towel across a faux wood countertop towards a stainless steel pot containing blue spheres. Next to the pot, a red-handled spoon is lying on the countertop. The camera is stationary, providing a high-angle view.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Slide towel over to just above the pot.</p>
+                </div>
+                <div class="object-description">
+                    Object: towel
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-22" class="video-container">
+            <div class="video-title">22. clip_6790.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6790.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6790.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm moves out of frame, leaving a stainless steel pot on a countertop.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the pot the the left of the blue cloth.</p>
+                </div>
+                <div class="object-description">
+                    Object: a blue cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-23" class="video-container">
+            <div class="video-title">23. clip_5165.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5165.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5165.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A white robot arm extends with its black gripper and places a red sushi piece from the countertop to the toy sink, filled with several toy foods. A fixed side-view camera captures the action.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put sushi on plate</p>
+                </div>
+                <div class="object-description">
+                    Object: plate
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-24" class="video-container">
+            <div class="video-title">24. clip_4153.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4153.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4153.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand squeezes a plastic bottle of detergent, dispensing the contents from the toy sink into the yellow drying rack next to it.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put detergent from sink into drying rack</p>
+                </div>
+                <div class="object-description">
+                    Object: drying rack
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-25" class="video-container">
+            <div class="video-title">25. clip_4073.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4073.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4073.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A toy kitchen with a sink and stovetop is shown. The camera is static. A toy corn is placed in a toy pan which is on the toy stove. There are toy vegetables and a toy pot around the stovetop.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put corn in pan which is on stove distractors</p>
+                </div>
+                <div class="object-description">
+                    Object: a pan
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-26" class="video-container">
+            <div class="video-title">26. clip_2697.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2697.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2697.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A silver spoon is picked up and placed behind a pan.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Pick up the spoon and place it behind the pan.</p>
+                </div>
+                <div class="object-description">
+                    Object: the spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-27" class="video-container">
+            <div class="video-title">27. clip_8990.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8990.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8990.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person moves an orange towel from the right to the left center of a wooden shelf.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move orange towel to left center of shelf.</p>
+                </div>
+                <div class="object-description">
+                    Object: orange towel
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-28" class="video-container">
+            <div class="video-title">28. clip_12698.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12698.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12698.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand places an orange spatula to the right of a silver bowl resting on a purple cloth. The bowl is on a wooden countertop.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the spatula to the right of the silver bowl.</p>
+                </div>
+                <div class="object-description">
+                    Object: a silver bowl
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-29" class="video-container">
+            <div class="video-title">29. clip_1358.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1358.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1358.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A yellow toy mushroom is placed into a silver toy pot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the mushroom into the pot</p>
+                </div>
+                <div class="object-description">
+                    Object: the mushroom
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-30" class="video-container">
+            <div class="video-title">30. clip_10129.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10129.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10129.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand moves a white light switch box to the right on a wooden countertop with toy food, including sushi, an egg, and a pepper. The camera angle remains static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>move light switch to the right</p>
+                </div>
+                <div class="object-description">
+                    Object: light switch
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-31" class="video-container">
+            <div class="video-title">31. clip_13159.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13159.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13159.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm lowers its gripper, grasps a green cucumber inside a blue cup, and lifts it up. The cucumber is then moved away from the cup, and the arm retracts. The scene is captured from a static, high-angle perspective on a light brown surface, where a blue blob, an orange disc, and a tan object are also visible.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>take cucumber out of cup</p>
+                </div>
+                <div class="object-description">
+                    Object: a cucumber
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-32" class="video-container">
+            <div class="video-title">32. clip_16615.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_16615.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_16615.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves toward a metal pot on a wooden surface, picks up the metal pot, and repositions it next to a can of peas and carrots.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>MOVE THE BLENDER INSIDE THE VESSEL</p>
+                </div>
+                <div class="object-description">
+                    Object: the blender
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-33" class="video-container">
+            <div class="video-title">33. clip_2214.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2214.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2214.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up a silver colander from a wooden surface, moves it in front of a red spoon, and then lowers the colander back onto the surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the colander in front of the red spoon</p>
+                </div>
+                <div class="object-description">
+                    Object: a red spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-34" class="video-container">
+            <div class="video-title">34. clip_10887.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10887.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10887.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm places a silver pot on a toy stove, then places a blue toy blueberry into the pot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put pot or pan on stove and put blueberry in pot or pan</p>
+                </div>
+                <div class="object-description">
+                    Object: pot or pan
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-35" class="video-container">
+            <div class="video-title">35. clip_15138.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_15138.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_15138.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a spoon with a red handle from a blue cloth and places it next to the cloth.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Take the spoon from the blue cloth and place it next to the cloth.</p>
+                </div>
+                <div class="object-description">
+                    Object: a blue cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-36" class="video-container">
+            <div class="video-title">36. clip_1838.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1838.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1838.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a silver pot and moves to place it on a yellow cloth on a light brown surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the pot on the yellow cloth</p>
+                </div>
+                <div class="object-description">
+                    Object: yellow cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-37" class="video-container">
+            <div class="video-title">37. clip_17186.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_17186.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_17186.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a carrot from the left side of a wooden surface and places it on the right side, near a silver bowl on an orange placemat. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Hold the carrot from left edge of the table and place it on top right side of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: a carrot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-38" class="video-container">
+            <div class="video-title">38. clip_8348.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8348.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8348.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves a silver pot, positioning it under a pepper shaker. The camera angle is fixed.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the pot to below the pepper.</p>
+                </div>
+                <div class="object-description">
+                    Object: the pot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-39" class="video-container">
+            <div class="video-title">39. clip_5527.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5527.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5527.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm reaches down, picks up a green piece of broccoli, and moves it to the right side of a folded yellow cloth on a light brown countertop. The countertop also holds a small metal pan and a yellow spatula. The camera provides a static, high-angle view of the scene.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Pick up the broccoli and place it on the right of the yellow cloth</p>
+                </div>
+                <div class="object-description">
+                    Object: the broccoli
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-40" class="video-container">
+            <div class="video-title">40. clip_15241.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_15241.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_15241.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robotic arm with a black gripper reaches for a silver pot on a gray toy stove. The robotic arm hovers above the pot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>end effector reaching pot or pan</p>
+                </div>
+                <div class="object-description">
+                    Object: pot or pan
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-41" class="video-container">
+            <div class="video-title">41. clip_9835.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_9835.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_9835.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a green pear from a wooden countertop and places it into a blue bowl in a toy kitchen sink.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put pear in bowl</p>
+                </div>
+                <div class="object-description">
+                    Object: a pear
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-42" class="video-container">
+            <div class="video-title">42. clip_5512.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5512.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5512.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up an orange measuring cup and moves it to the far right front of the table.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the measuring cup to the far right front of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: a measuring cup
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-43" class="video-container">
+            <div class="video-title">43. clip_8774.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8774.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8774.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person puts a yellow toy potato into a toy pot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put potato in pot or pan</p>
+                </div>
+                <div class="object-description">
+                    Object: a potato
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-44" class="video-container">
+            <div class="video-title">44. clip_8454.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8454.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8454.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm picks up a metal pot and places it on an orange cloth on a light brown surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the pot on the orange cloth.</p>
+                </div>
+                <div class="object-description">
+                    Object: orange cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-45" class="video-container">
+            <div class="video-title">45. clip_12980.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12980.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12980.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm lowers, positioning its gripper over a silver pot with green and orange objects inside on a toy stove; then the robotic arm lifts the silver pot with its contents.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the yellow cloth on the left edge of the stove.</p>
+                </div>
+                <div class="object-description">
+                    Object: a yellow cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-46" class="video-container">
+            <div class="video-title">46. clip_10351.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10351.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10351.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm picks up a silver bowl from a light brown surface. It lifts the bowl and moves it to the right side of the surface. The camera angle is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>PICK UP THE VISSELS PUT ON THE ANOTHER SIDE OF TABLE</p>
+                </div>
+                <div class="object-description">
+                    Object: VISSELS
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-47" class="video-container">
+            <div class="video-title">47. clip_123.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_123.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_123.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm picks up a purple cloth from the left, moves towards the center, and places the cloth near a yellow brush next to a silver bowl.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the purple cloth in front of microwave and beside yellow brush.</p>
+                </div>
+                <div class="object-description">
+                    Object: purple cloth, yellow brush
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-48" class="video-container">
+            <div class="video-title">48. clip_12280.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12280.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12280.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a green spatula and moves it below a yellow cloth on a countertop with a pot and a corn on it.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the spatula below the yellow cloth.</p>
+                </div>
+                <div class="object-description">
+                    Object: yellow cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-49" class="video-container">
+            <div class="video-title">49. clip_7302.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7302.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7302.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm reaches down and grabs a folded purple cloth and moves the cloth to the far edge of a wood-patterned table.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the cloth to the far edge of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-50" class="video-container">
+            <div class="video-title">50. clip_3601.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3601.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3601.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm opens the oven door of a white toy kitchen set, revealing a red cup inside, and then closes the door.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>close oven</p>
+                </div>
+                <div class="object-description">
+                    Object: oven
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-51" class="video-container">
+            <div class="video-title">51. clip_12847.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12847.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12847.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person puts a small spoon from a silverware basket into a black tray with dividers.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put small spoon from basket to tray</p>
+                </div>
+                <div class="object-description">
+                    Object: a small spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-52" class="video-container">
+            <div class="video-title">52. clip_3698.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3698.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3698.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm opens the toy microwave oven's door of a children's kitchen play set.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>open microwave</p>
+                </div>
+                <div class="object-description">
+                    Object: microwave
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-53" class="video-container">
+            <div class="video-title">53. clip_2025.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2025.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2025.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves a silver pot with a yellow cloth underneath to the left on a light brown surface. The arm stops before reaching a green pepper toy and a green spatula toy on the surface. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the pot to the left but stop before pepper</p>
+                </div>
+                <div class="object-description">
+                    Object: a pot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-54" class="video-container">
+            <div class="video-title">54. clip_8589.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8589.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8589.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper moves a metal wok closer to a blue spoon on a wooden-patterned surface. A blue cloth and a yellow cheese block are also on the surface. The camera is stationary.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the wok closer to the spoon</p>
+                </div>
+                <div class="object-description">
+                    Object: wok
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-55" class="video-container">
+            <div class="video-title">55. clip_3999.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3999.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3999.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black bird walks to a small silver frying pan with a green object inside it and pecks at the pan. The bird then picks up the pan and moves it to the left side of the wooden surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the fork to the top left corner of the table</p>
+                </div>
+                <div class="object-description">
+                    Object: the fork
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-56" class="video-container">
+            <div class="video-title">56. clip_8618.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8618.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8618.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up an orange carrot from a wooden countertop, then moves the carrot and places it inside of a silver pot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the carrot inside of the pot.</p>
+                </div>
+                <div class="object-description">
+                    Object: a carrot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-57" class="video-container">
+            <div class="video-title">57. clip_14047.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14047.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14047.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person puts a white bottle into a play kitchen sink.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put detergent in sink</p>
+                </div>
+                <div class="object-description">
+                    Object: sink
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-58" class="video-container">
+            <div class="video-title">58. clip_14917.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14917.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14917.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves a spoon from a blue cloth over to above a silver bowl.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the spoon so its above the bowl.</p>
+                </div>
+                <div class="object-description">
+                    Object: a bowl
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-59" class="video-container">
+            <div class="video-title">59. clip_8973.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8973.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_8973.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A white robot arm opens a gray fridge.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>open fridge</p>
+                </div>
+                <div class="object-description">
+                    Object: a fridge
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-60" class="video-container">
+            <div class="video-title">60. clip_7682.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7682.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7682.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper descends and removes the lid from a silver pot inside a blue toy sink filled with other toy dishes. The camera remains static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>take lid off pot or pan</p>
+                </div>
+                <div class="object-description">
+                    Object: pot or pan
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-61" class="video-container">
+            <div class="video-title">61. clip_4718.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4718.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4718.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm extends into a toy sink, picks up a toy beet from a toy pot and lifts it up. The kitchen sink is part of a toy kitchen with a stove top, oven, and cookie. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>take beet from pot sink</p>
+                </div>
+                <div class="object-description">
+                    Object: beet
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-62" class="video-container">
+            <div class="video-title">62. clip_5431.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5431.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5431.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A toy sink contains a dish, a ball, and a cup. A hand places a toy carrot on a toy plate.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put carrot on plate</p>
+                </div>
+                <div class="object-description">
+                    Object: carrot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-63" class="video-container">
+            <div class="video-title">63. clip_1557.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1557.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1557.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person moves a silver toy bowl from the lower of two cooktop surfaces to the upper one on a white toy stove.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>move the the bowl to the upper cooktop</p>
+                </div>
+                <div class="object-description">
+                    Object: a bowl
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-64" class="video-container">
+            <div class="video-title">64. clip_13590.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13590.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13590.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A silver pot sits on a blue and white toy stove. A hand places a silver lid on the pot. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put lid on pot or pan</p>
+                </div>
+                <div class="object-description">
+                    Object: pot, pan, lid
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-65" class="video-container">
+            <div class="video-title">65. clip_5665.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5665.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5665.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm picks up a yellow knife and moves it to the left of a blue object. The robot arm then releases the yellow knife. The knife and the blue object are sitting on a wooden surface, along with a silver bowl on an orange cloth. The camera angle is constant throughout the video.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>move yellow knife to left of blue object</p>
+                </div>
+                <div class="object-description">
+                    Object: a blue object
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-66" class="video-container">
+            <div class="video-title">66. clip_884.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_884.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_884.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person opens a red toolbox drawer filled with tools, then reaches in and picks up a red and yellow screwdriver. The camera angle is a close up, static shot of the open drawer.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>pick up red srewdriver</p>
+                </div>
+                <div class="object-description">
+                    Object: red srewdriver
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-67" class="video-container">
+            <div class="video-title">67. clip_6778.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6778.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6778.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm with a black gripper picks up a small silver pot from a wooden surface. It then moves the pot and places it in front of a blue toy stove. Canned goods, a mushroom toy, and a blue towel sit on the surface near the stove. The camera is static and provides a close-up shot of the actions.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Pick up the silver pot and place it in front of the blue appliance.</p>
+                </div>
+                <div class="object-description">
+                    Object: a silver pot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-68" class="video-container">
+            <div class="video-title">68. clip_3710.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3710.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3710.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a yellow brush and places it on the left side of a wooden table. The table also has a metal bowl with a red ball inside, sitting on a blue cloth. The camera remains static throughout.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the yellow brush on the left side of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: a yellow brush
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-69" class="video-container">
+            <div class="video-title">69. clip_13732.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13732.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_13732.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A person puts a toy carrot into a toy bowl that is on a toy stove.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put carrot in bowl</p>
+                </div>
+                <div class="object-description">
+                    Object: bowl
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-70" class="video-container">
+            <div class="video-title">70. clip_4043.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4043.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4043.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm lowers and places a silver pot onto a yellow towel on a light brown countertop. A can with the words "Peas & Carrots" appears on the countertop.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the silver pot on the yellow towel.</p>
+                </div>
+                <div class="object-description">
+                    Object: a silver pot, a yellow towel
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-71" class="video-container">
+            <div class="video-title">71. clip_5015.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5015.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5015.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm moves a silver pot to the front edge of a counter in front of a red pepper.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move silver pot to front edge of counter front of red pepper</p>
+                </div>
+                <div class="object-description">
+                    Object: silver pot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-72" class="video-container">
+            <div class="video-title">72. clip_11375.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_11375.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_11375.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a yellow rag and moves it to the right, placing it next to a red spoon on a wooden surface. A silver pot and a can with a green label are also on the surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Slide the yellow rag next to the red spoon.</p>
+                </div>
+                <div class="object-description">
+                    Object: a yellow rag
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-73" class="video-container">
+            <div class="video-title">73. clip_7571.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7571.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7571.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A silver spoon is placed on a white plate.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put spoon on plate</p>
+                </div>
+                <div class="object-description">
+                    Object: a plate
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-74" class="video-container">
+            <div class="video-title">74. clip_980.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_980.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_980.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up an orange wedge and moves it across a wooden countertop, positioning it in front of a small microwave. Cans of tomato sauce and pineapple slices, along with a small metal pot, are also visible on the counter next to a black stove. The camera remains stationary throughout.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the orange in front of the microwave</p>
+                </div>
+                <div class="object-description">
+                    Object: an orange
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-75" class="video-container">
+            <div class="video-title">75. clip_9243.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_9243.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_9243.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm picks up a green item from a stainless steel bowl on a wooden surface, then places the green item to the left of a blue napkin.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Put the green item to the left of the blue napkin.</p>
+                </div>
+                <div class="object-description">
+                    Object: a green item
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-76" class="video-container">
+            <div class="video-title">76. clip_937.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_937.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_937.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up a yellow toy banana from a wooden table, then moves and places it into a small, silver toy colander. The camera is static, providing a high-angle shot of the scene.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put banana in colander</p>
+                </div>
+                <div class="object-description">
+                    Object: a yellow banana
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-77" class="video-container">
+            <div class="video-title">77. clip_169.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_169.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_169.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm moves a metal pot from left to right, placing it to the right of a carrot on a wooden surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the pot to the right of the carrot</p>
+                </div>
+                <div class="object-description">
+                    Object: a carrot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-78" class="video-container">
+            <div class="video-title">78. clip_12062.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12062.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_12062.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a red pepper and moves it to the left of a metal pot on a play kitchen countertop.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the red pepper to the left of the metal pot.</p>
+                </div>
+                <div class="object-description">
+                    Object: a red pepper
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-79" class="video-container">
+            <div class="video-title">79. clip_10670.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10670.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10670.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up a grey cube from a light brown countertop and moves it to the right of a silver fork. The countertop also holds a small silver pan on a purple cloth. The camera is stationary and captures a side view of the action.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the grey cube to the right of the fork.</p>
+                </div>
+                <div class="object-description">
+                    Object: grey cube
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-80" class="video-container">
+            <div class="video-title">80. clip_6431.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6431.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6431.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm reaches into a toy sink, inside of the sink is a blue bowl with a spoon, the robot arm takes the spoon out of the bowl. There is a yellow banana and a red bottle inside the sink. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>take spoon out of bowl sink</p>
+                </div>
+                <div class="object-description">
+                    Object: a spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-81" class="video-container">
+            <div class="video-title">81. clip_14270.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14270.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14270.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm places a silver pot on a toy stove. A yellow stuffed duck is on the counter next to the stove. The robot arm then places the yellow duck in the silver pot.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put pan on stove and put stuffedduck in pan</p>
+                </div>
+                <div class="object-description">
+                    Object: stuffedduck
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-82" class="video-container">
+            <div class="video-title">82. clip_6504.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6504.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_6504.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm picks up a blue spoon from a blue cloth on a wooden surface, moves the spoon and places it to the left of an orange and green shaker.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move spoon to left of orange/green shaker.</p>
+                </div>
+                <div class="object-description">
+                    Object: orange/green shaker
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-83" class="video-container">
+            <div class="video-title">83. clip_7883.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7883.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7883.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm moves a red spoon above a yellow cloth.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the spoon above the cloth.</p>
+                </div>
+                <div class="object-description">
+                    Object: a cloth
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-84" class="video-container">
+            <div class="video-title">84. clip_5028.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5028.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_5028.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand puts a toy carrot on a toy plate inside a toy sink.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put carrot on plate</p>
+                </div>
+                <div class="object-description">
+                    Object: carrot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-85" class="video-container">
+            <div class="video-title">85. clip_17132.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_17132.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_17132.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A fixed camera shows a kitchen counter with toy food, including an egg, a pepper, and an ice cream cone. A closed book with a red cover is lying on the counter.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>open book</p>
+                </div>
+                <div class="object-description">
+                    Object: book
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-86" class="video-container">
+            <div class="video-title">86. clip_9902.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_9902.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_9902.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black stand mixer is moved to the right above a potato on a wooden countertop with a steel pot, a blue measuring spoon, and an orange towel.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>move pot to the right above potato</p>
+                </div>
+                <div class="object-description">
+                    Object: potato
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-87" class="video-container">
+            <div class="video-title">87. clip_15942.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_15942.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_15942.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm moves a blue dice toy and places it in a silver vessel resting on a purple cloth. The vessel is on a wooden surface.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put blue dice toy on the vessel</p>
+                </div>
+                <div class="object-description">
+                    Object: blue dice toy
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-88" class="video-container">
+            <div class="video-title">88. clip_1720.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1720.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_1720.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm maneuvers over a blue toy kitchen. It grabs a toy sushi roll from the stovetop and puts it into a silver toy pot on the stove.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put sushi in pot or pan</p>
+                </div>
+                <div class="object-description">
+                    Object: sushi
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-89" class="video-container">
+            <div class="video-title">89. clip_10156.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10156.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_10156.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm lifts a sushi roll from a pot, moves it away, and sets the pot back down.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the sushi rool from the pot to the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: sushi rool
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-90" class="video-container">
+            <div class="video-title">90. clip_247.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_247.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_247.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand moves a yellow toy spoon with a silver top to the left side of a metal pot on a blue towel.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Place the spoon to the left of the metal pot</p>
+                </div>
+                <div class="object-description">
+                    Object: a metal pot
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-91" class="video-container">
+            <div class="video-title">91. clip_14449.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14449.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14449.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm lowers its gripper, grasps an orange lid, and places it on a round brown pot inside a cardboard-walled enclosure on a counter, with other objects, including yellow and green citrus and a blue bowl nearby.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put lid on pot cardboardfence</p>
+                </div>
+                <div class="object-description">
+                    Object: cardboard fence
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-92" class="video-container">
+            <div class="video-title">92. clip_16233.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_16233.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_16233.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper picks up a yellow toy fish from a brown countertop and moves it to the left of a light blue toy spoon. The countertop also holds a toy saucepan, a purple cloth, a toy microwave, cans of tomato sauce and pineapple slices, and a toy stovetop. The camera is static.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the fish to the left of the spoon.</p>
+                </div>
+                <div class="object-description">
+                    Object: a fish, a spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-93" class="video-container">
+            <div class="video-title">93. clip_14342.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14342.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_14342.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm with a gripper descends and grasps a silver vessel on a wooden surface, then moves the vessel towards the bottom right of the table. The camera angle is a fixed top view.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the silver vessel towards the bottom right of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: a silver vessel
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-94" class="video-container">
+            <div class="video-title">94. clip_4147.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4147.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4147.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A red spoon is moved to the front left corner of the table.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the spoon to the front left corner of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: a spoon
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-95" class="video-container">
+            <div class="video-title">95. clip_3860.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3860.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_3860.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A hand puts the yellow corn cob on the table between the mushroom and the blue towel.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>put the corn in between the mushroom and the towel</p>
+                </div>
+                <div class="object-description">
+                    Object: the corn
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-96" class="video-container">
+            <div class="video-title">96. clip_7899.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7899.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_7899.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robot arm lowers and grips a blue brush, moving it from the corner to the edge of a wooden-looking table.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the brush from corner to edge of the table.</p>
+                </div>
+                <div class="object-description">
+                    Object: table
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-97" class="video-container">
+            <div class="video-title">97. clip_2325.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2325.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_2325.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A robot arm picks up a red fork and moves it away from a yellow rag on a counter. The counter also holds a metal bowl with a yellow object inside. The camera is stationary.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Move the red fork away from the yellow rag.</p>
+                </div>
+                <div class="object-description">
+                    Object: a red fork
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-98" class="video-container">
+            <div class="video-title">98. clip_101.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_101.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_101.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A can, a wedge of cheese, a knife, and a folded purple towel sit on a toy kitchen counter. The camera angle is high.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>NOT MOVING ANYTHING</p>
+                </div>
+                <div class="object-description">
+                    Object: unknown
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-99" class="video-container">
+            <div class="video-title">99. clip_4848.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4848.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4848.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A black robotic arm reaches down, picks up the blue fork, and places it on the far right back edge of the table.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>Pick up the blue fork and place it on the far right back edge of the table</p>
+                </div>
+                <div class="object-description">
+                    Object: a blue fork
+                </div>
+            </div>
+        </div>
+        
+        <div id="video-100" class="video-container">
+            <div class="video-title">100. clip_4168.mp4</div>
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4168.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="direct-link">
+                <a href="https://huggingface.co/datasets/YunjinZhang/eiwm_viz_video_bbox/resolve/main/video_bbox_viz_bridge/original_object_descriptions_bbox/clip_4168.mp4" target="_blank">Direct link to video</a>
+            </div>
+            <div class="captions-container">
+                <h2>Captions:</h2>
+                <div class="caption">
+                    <div class="caption-type">Gemini Caption:</div>
+                    <p>A brown cardboard box with the Amazon logo sits on a toy stove top. A black robotic arm reaches into the cardboard box.</p>
+                </div>
+                <div class="caption">
+                    <div class="caption-type">Original Caption:</div>
+                    <p>close large4fbox flaps</p>
+                </div>
+                <div class="object-description">
+                    Object: large4fbox
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    </html>
+    
