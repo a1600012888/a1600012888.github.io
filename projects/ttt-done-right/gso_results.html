@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Test-Time Training Done Right">
+  <meta name="keywords" content="Test-Time Training, LaCT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test-Time Training Done Right</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+        "three/controls/OrbitControls": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js",
+        "three/libs/stats": "https://unpkg.com/three@0.156.1/examples/jsm/libs/stats.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="dnerf">Test-Time Training Done Right</span>
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">
+        <center>Results on Novel View Synthesis (GSO Dataset)</center>
+      </h2>
+
+      <center><p>Rendering at 1024x1024 resolution, best viewed in full screen.</p></center>
+      <br>
+      <div class="hero-body">
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000001_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00001010_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000063_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000070_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000067_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000332_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000328_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000764_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000706_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000578_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000263_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000212_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000327_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000486_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000529_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000781_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000163_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000717_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000572_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000513_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <hr>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">
+        <center>Limitations</center>
+      </h2>
+
+      <center><p>Our results may suffer from flickering artifacts at regions with high-frequency geometry or texture details. </p></center>
+      <br>
+      
+      <div class="hero-body">
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_failure_cases/00000047_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_failure_cases/00000343_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_failure_cases/00000920_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+              <source
+                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_failure_cases/00000206_turntable_with_input.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              We borrow the source code of this website from <a
+                href="https://github.com/nerfies/nerfies.github.io">HERE</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
