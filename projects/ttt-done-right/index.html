@@ -52,23 +52,65 @@
             </h1>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Anonymous Authors</span>
-              <p><br></p>
               <span class="author-block">
-                <strong>
-                  Large Chunk Test-Time Training (LaCT) for efficient long-context sequence modeling.
-                </strong>
+                <span class="author-block"> <a href="https://tianyuanzhang.com/">Tianyuan Zhang
+                  </a><sup>1</sup>,</span>
+                <span class="author-block"> <a href="https://sai-bi.github.io/">Sai Bi</a><sup>2</sup>,</span>
+                <span class="author-block"> <a href="https://yiconghong.me/">Yicong Hong</a><sup>2</sup>,</span>
+                <span class="author-block"> <a href="https://kai-46.github.io/website/">Kai
+                    Zhang</a><sup>2</sup>,</span>
+                <span class="author-block"> <a href="https://scholar.google.com/citations?user=NLxrmYQAAAAJ">Fujun
+                    Luan</a><sup>2</sup></span>
+                <span class="author-block"> <a href="https://sustcsonglin.github.io/">Songlin
+                    Yang</a><sup>1</sup></span>
+                <span class="author-block"> <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a><sup>1</sup>,</span>
+                <span class="author-block"> <a href="https://billf.mit.edu/">William T.
+                    Freeman</a><sup>1</sup>,</span>
+                <span class="author-block"> <a href="https://www.cs.unc.edu/~airsplay/">Hao Tan</a><sup>2</sup>,</span>
+
+
               </span>
+
+              <br>
+              <span class="author-block">
+                <span class="author-block"><sup>1</sup> Massachusetts Institute of Technology &nbsp;&nbsp;</span>
+                <span class="author-block"><sup>2</sup>Adobe Research &nbsp;&nbsp;</span>
+              </span>
+
+              <br>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="./static/pdfs/paper_tttdr.pdf" class="external-link button is-normal is-rounded is-light">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/a1600012888/LaCT"
+                      class="external-link button is-normal is-rounded is-light">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
 
               <br />
               <br />
               <div class="columns is-1 is-multiline is-mobile has-text-justified">
                 <img src="./static/images/lact_arch.png" alt="Lact Architecture">
-                <p><strong>Figure 2</strong>. 
-                  The basic diagram for a LaCT block. 
-    The large-chunk TTT layer updates the fast weight W to store history chunk information,
-    while the window attention handles the internal structures within the chunk. 
-    The solid line denotes the information flow over model depth and the dashed line denotes the information flow over time (i.e., the fast weight W passing through chunks).
+                <p><strong>Figure 2</strong>.
+                  The basic diagram for a LaCT block.
+                  The large-chunk TTT layer updates the fast weight W to store history chunk information,
+                  while the window attention handles the internal structures within the chunk.
+                  The solid line denotes the information flow over model depth and the dashed line denotes the
+                  information flow over time (i.e., the fast weight W passing through chunks).
                 </p>
               </div>
 
@@ -88,7 +130,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              
+
               Test-Time Training (TTT) models context dependencies by adapting
               part of the model's weights (often referred to as fast weights) at
               inference time. This adapted fast weight, similar to recurrent
@@ -99,32 +141,32 @@
               many of these approaches operate with extremely low FLOPs
               utilization (often below 5%) because they deliberately apply
               small online mini-batch sizes (e.g., updating fast weights every
-              16 or 64 tokens).  Moreover, a small mini-batch implies
+              16 or 64 tokens). Moreover, a small mini-batch implies
               fine-grained block-wise causal dependencies in the data, making
               them unsuitable for data beyond 1D ordered sequences, like sets or
-              N-dimensional grids such as images or videos.  In contrast, we
+              N-dimensional grids such as images or videos. In contrast, we
               pursue the opposite direction by proposing an extremely large
               chunk update, ranging from 2K to 1M tokens across tasks of varying
               modalities, which we refer to as Large Chunk Test-Time Training
-              (LaCT).  This approach improves hardware utilization by orders of
+              (LaCT). This approach improves hardware utilization by orders of
               magnitude, and more importantly, facilitates scaling of nonlinear
               state size (up to 40% of model parameter size), hence
               substantially improving state capacity, all without requiring
-              cumbersome and error-prone custom kernel implementations.  It also
+              cumbersome and error-prone custom kernel implementations. It also
               allows easy integration of sophisticated optimizers like Muon for
-              online memory updates.  We validate our approach across diverse
+              online memory updates. We validate our approach across diverse
               data modalities and tasks, including novel view synthesis from
               image sets, language models, and auto-regressive video diffusion
-              models.  Our approach can scale up to 14-billion-parameter
+              models. Our approach can scale up to 14-billion-parameter
               auto-regressive video diffusion models handling sequences of up to
-              56K tokens.  In our longest sequence experiment, we perform novel
+              56K tokens. In our longest sequence experiment, we perform novel
               view synthesis with more than one million context length. Our
               results highlight the computational and performance benefits of
               large-chunk test-time training, paving the way for more efficient
               and scalable long-context sequence modeling. We hope that this
               work will inspire and accelerate new research in the field of
-              long-context modeling and test-time training. 
-              
+              long-context modeling and test-time training.
+
               <br><br>
             </p>
           </div>
@@ -133,13 +175,17 @@
       </div>
       <img src="./static/images/fig_utilization.png" alt="Hardware Utilization">
       <p class="has-text-justified"><strong>Figure 1</strong>.
-        Using larger chunk sizes significantly improves GPU utilization compared
-        to the original test-time training (TTT) method that even uses
-        customized kernels <b>(a)</b>. This enhanced utilization enables
-        efficient scaling to larger state sizes <b>(b)</b>, resulting in
-        improved training efficiency and better overall performance
-        <b>(c)</b>. The dotted line in <b>(a)</b> is the theoretical peak
-        BF16 throughput of the GPU. 
+        Using larger chunk sizes significantly improves GPU utilization compared to
+        the original test-time training (TTT) method that even uses customized kernels
+        <b>(a)</b>. This enhanced utilization enables efficient and effective scaling
+        to larger state sizes <b>(b)</b>, <b>(c)</b>,leading to better overall
+        performance in less wall-clock time
+        <b>(d)</b>. The dotted line in <b>(a)</b> is the theoretical peak
+        BF16 throughput of the GPU. Panel <b>(c)</b> measure average validation loss of the last 2K tokens
+        in sequences processed by a LaCT language model with different state sizes,
+        demonstrating benefits of larger state size.
+        Panel <b>(d)</b> compares performance versus training time across different baselines on the novel view
+        synthesis benchmark
       </p>
     </div>
   </section>
@@ -152,24 +198,28 @@
       </h2>
 
       <h3 class="subtitle is-4">
-          <center><a href="./gso_results.html">(Click to see more results)</a></center>
+        <center><a href="./gso_results.html">(Click to see more results)</a></center>
       </h3>
-      <center><p>Online compressing 262K tokens (16 images of 1024x1024 resolution) into fast weights.</center>
-      <center><p>Rendering at 1024x1024 resolution, best viewed in full screen.</p></center>
+      <center>
+        <p>Online compressing 262K tokens (16 images of 1024x1024 resolution) into fast weights.
+      </center>
+      <center>
+        <p>Rendering at 1024x1024 resolution, best viewed in full screen.</p>
+      </center>
       <div class="hero-body">
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000351_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/gso_results/00000351_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00001007_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/gso_results/00001007_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
           </div>
@@ -178,17 +228,17 @@
 
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000758_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/gso_results/00000758_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/gso_results/00000547_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/gso_results/00000547_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
           </div>
@@ -206,38 +256,44 @@
       </h2>
 
       <h3 class="subtitle is-4">
-          <center><a href="./dl3dv_results.html">(Click to see more results)</a></center>
+        <center><a href="./dl3dv_results.html">(Click to see more results)</a></center>
       </h3>
 
-      <center><p>Online compressing 1 million tokens (128 images of 960x536 resolution) into fast weights. </p></center>
+      <center>
+        <p>Online compressing 1 million tokens (128 images of 960x536 resolution) into fast weights. </p>
+      </center>
 
       <br>
 
-      
-    
+
+
 
       <div class="hero-body">
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000006_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000006_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
             <center>
-              <a href="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000006_input.png"> Input images</a>
+              <a
+                href="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000006_input.png">
+                Input images</a>
             </center>
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000108_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000108_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
 
             <center>
-              <a href="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000108_input.png"> Input images</a>
+              <a
+                href="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000108_input.png">
+                Input images</a>
             </center>
           </div>
         </div>
@@ -245,24 +301,28 @@
 
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000076_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000076_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
             <center>
-              <a href="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000076_input.png"> Input images</a>
+              <a
+                href="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000076_input.png">
+                Input images</a>
             </center>
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000035_turntable_with_input.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000035_turntable_with_input.mp4"
                 type="video/mp4">
             </video>
             <center>
-              <a href="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/dl3dv_results_final/00000035_input.png"> Input images</a>
+              <a
+                href="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/dl3dv_results_final/00000035_input.png">
+                Input images</a>
             </center>
           </div>
         </div>
@@ -283,21 +343,18 @@
       <h2 class="title is-3">
         <center>Results on Language Modeling</center>
       </h2>
-        <img src="./static/images/lm_result_v2.png" alt="Language Modeling">
+      <img src="./static/images/figure_lm_result.png" alt="Language Modeling">
 
-        <p class="has-text-justified"><strong>Figure 5</strong>.
-          Language Model results. 
-          <b>(a, c)</b> Our model achieves lower per-position loss at larger
-          token indices compared to GLA and DeltaNet at both 760M and 3B scale,
-          indicating stronger long-context modeling capability.
-          <b>(b, d)</b> Our model consistently outperforms GLA and DeltaNet in
-      retrieval accuracy. Furthermore, our Muon variant consistently outperforms
-          our Momentum variant. 
-          <b>(e)</b> Validation loss at the final 2k tokens improves consistently as
-          the attention state size increases from 0.25x to 3x d^2, where d
-          denotes the model's feature dimension.
-        </p>
-        <br>
+      <p class="has-text-justified"><strong>Figure 5</strong>.
+        Language Model results.
+        <b>(a, c)</b> Our model achieves lower per-position loss at larger
+        token indices compared to GLA and DeltaNet at both 760M and 3B scale,
+        indicating stronger long-context modeling capability.
+        <b>(b, d)</b> Our model consistently outperforms GLA and DeltaNet in
+        retrieval accuracy. Furthermore, our Muon variant consistently outperforms
+        our Momentum variant.
+      </p>
+      <br>
     </div>
   </section>
 
@@ -310,50 +367,55 @@
 
 
       <h3 class="subtitle is-4">
-          <center><a href="./ar_video_results.html">(Click to see more results)</a></center>
+        <center><a href="./ar_video_results.html">(Click to see more results)</a></center>
       </h3>
 
 
       <div class="hero-body">
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/ar_video_results_1/output_006.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/ar_video_results_1/output_006.mp4"
                 type="video/mp4">
             </video>
             <p class="has-text-justified">
-              This close-up shot of a Victoria crowned pigeon showcases its striking blue plumage and red chest. Its crest is made of delicate, lacy feathers, while its eye is a striking red color. The bird's head is tilted slightly to the side, giving the impression of it looking regal and majestic. The background is blurred, drawing attention to the bird's striking appearance.
+              This close-up shot of a Victoria crowned pigeon showcases its striking blue plumage and red chest. Its
+              crest is made of delicate, lacy feathers, while its eye is a striking red color. The bird's head is tilted
+              slightly to the side, giving the impression of it looking regal and majestic. The background is blurred,
+              drawing attention to the bird's striking appearance.
             </p>
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/ar_video_results_1/output_005.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/ar_video_results_1/output_005.mp4"
                 type="video/mp4">
             </video>
-            <p class="has-text-justified">A gorgeously rendered papercraft world of a coral reef, rife with colorful fish and sea creatures.</p>
+            <p class="has-text-justified">A gorgeously rendered papercraft world of a coral reef, rife with colorful
+              fish and sea creatures.</p>
           </div>
         </div>
 
 
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/ar_video_results_1/output_060.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/ar_video_results_1/output_060.mp4"
                 type="video/mp4">
             </video>
             <p class="has-text-justified">
-              An astronaut runs on the surface of the moon, the low angle shot shows the vast background of the moon, the movement is smooth and appears lightweight.
+              An astronaut runs on the surface of the moon, the low angle shot shows the vast background of the moon,
+              the movement is smooth and appears lightweight.
             </p>
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/ar_video_results_1/output_064.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/ar_video_results_1/output_064.mp4"
                 type="video/mp4">
             </video>
             <p class="has-text-justified">
@@ -365,9 +427,9 @@
 
         <div class="columns is-1 is-multiline is-mobile">
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/ar_videos_8secs/009.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/ar_videos_8secs/009.mp4"
                 type="video/mp4">
             </video>
             <p class="has-text-justified">
@@ -376,9 +438,9 @@
           </div>
 
           <div class="column pb-0 mb-0 is-half">
-            <video id="teaser" autoplay muted loop playsinline controls  height="100%">
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
               <source
-                src="https://huggingface.co/datasets/tempdatasest/ttt_dataset/resolve/main/ar_videos_8secs/013.mp4"
+                src="https://huggingface.co/datasets/YunjinZhang/ttt_done_right_results/resolve/main/ar_videos_8secs/013.mp4"
                 type="video/mp4">
             </video>
             <p class="has-text-justified">
