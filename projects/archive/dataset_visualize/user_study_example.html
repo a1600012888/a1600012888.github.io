@@ -1,0 +1,3591 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Video Generation User Study</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .video-container {
+                margin: 20px 0;
+                padding: 20px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .video-title {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 15px;
+                color: #333;
+            }
+            video {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                display: block;
+                margin: 0 auto 20px auto;
+                border: 1px solid #ddd;
+            }
+            .captions-container {
+                margin: 20px 0;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 4px;
+            }
+            .caption {
+                margin-bottom: 10px;
+            }
+            .caption-label {
+                font-weight: bold;
+                color: #666;
+                margin-bottom: 5px;
+            }
+            .evaluation-container {
+                margin-top: 20px;
+                padding: 20px;
+                background: #e8f4fd;
+                border-radius: 4px;
+                border-left: 4px solid #2196F3;
+            }
+            .evaluation-title {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 15px;
+                color: #333;
+            }
+            .criterion {
+                margin-bottom: 15px;
+                padding: 10px;
+                background: white;
+                border-radius: 4px;
+            }
+            .criterion-question {
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #444;
+            }
+            .criterion-options {
+                display: flex;
+                gap: 20px;
+            }
+            .radio-option {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .radio-option input[type="radio"] {
+                margin: 0;
+            }
+            .export-section {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #4CAF50;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            .export-button {
+                background: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                font-weight: bold;
+                cursor: pointer;
+                color: #4CAF50;
+            }
+            .export-button:hover {
+                background: #f0f0f0;
+            }
+            .progress {
+                margin-top: 10px;
+                font-size: 12px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Video Generation User Study</h1>
+            <p>Please evaluate each generated video based on the four criteria below. Your evaluations will help improve video generation models.</p>
+            <p><strong>Instructions:</strong> Watch each video and answer the four questions for each video. Click "Export Results" when you're done to download your evaluations.</p>
+        </div>
+    
+        <div class="video-container" id="video-133">
+            <div class="video-title">Video 133</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0133_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>put_the_pen_in_the_mug</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>The right hand places the white and black pen into the black mug on the mousepad.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_133" value="yes" id="intent_133_yes">
+                            <label for="intent_133_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_133" value="no" id="intent_133_no">
+                            <label for="intent_133_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_133" value="yes" id="endstate_133_yes">
+                            <label for="endstate_133_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_133" value="no" id="endstate_133_no">
+                            <label for="endstate_133_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_133" value="yes" id="complete_133_yes">
+                            <label for="complete_133_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_133" value="no" id="complete_133_no">
+                            <label for="complete_133_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_133" value="yes" id="perfect_133_yes">
+                            <label for="perfect_133_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_133" value="no" id="perfect_133_no">
+                            <label for="perfect_133_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-134">
+            <div class="video-title">Video 134</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0134_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>put_toothpase_on_the_toothbrush</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand squeezes a tube of Crest toothpaste onto a toothbrush resting on a black cloth.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_134" value="yes" id="intent_134_yes">
+                            <label for="intent_134_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_134" value="no" id="intent_134_no">
+                            <label for="intent_134_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_134" value="yes" id="endstate_134_yes">
+                            <label for="endstate_134_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_134" value="no" id="endstate_134_no">
+                            <label for="endstate_134_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_134" value="yes" id="complete_134_yes">
+                            <label for="complete_134_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_134" value="no" id="complete_134_no">
+                            <label for="complete_134_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_134" value="yes" id="perfect_134_yes">
+                            <label for="perfect_134_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_134" value="no" id="perfect_134_no">
+                            <label for="perfect_134_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-135">
+            <div class="video-title">Video 135</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0135_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>putting_the_lid_on_a_container</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand places a red, square lid onto a clear plastic container on a kitchen counter.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_135" value="yes" id="intent_135_yes">
+                            <label for="intent_135_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_135" value="no" id="intent_135_no">
+                            <label for="intent_135_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_135" value="yes" id="endstate_135_yes">
+                            <label for="endstate_135_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_135" value="no" id="endstate_135_no">
+                            <label for="endstate_135_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_135" value="yes" id="complete_135_yes">
+                            <label for="complete_135_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_135" value="no" id="complete_135_no">
+                            <label for="complete_135_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_135" value="yes" id="perfect_135_yes">
+                            <label for="perfect_135_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_135" value="no" id="perfect_135_no">
+                            <label for="perfect_135_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-136">
+            <div class="video-title">Video 136</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0136_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>putting_the_toothbrush_in_the_yellow_cup</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand holding a white and blue toothbrush places it into one of the two yellow, lemon-shaped cups on the green tiled counter.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_136" value="yes" id="intent_136_yes">
+                            <label for="intent_136_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_136" value="no" id="intent_136_no">
+                            <label for="intent_136_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_136" value="yes" id="endstate_136_yes">
+                            <label for="endstate_136_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_136" value="no" id="endstate_136_no">
+                            <label for="endstate_136_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_136" value="yes" id="complete_136_yes">
+                            <label for="complete_136_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_136" value="no" id="complete_136_no">
+                            <label for="complete_136_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_136" value="yes" id="perfect_136_yes">
+                            <label for="perfect_136_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_136" value="no" id="perfect_136_no">
+                            <label for="perfect_136_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-137">
+            <div class="video-title">Video 137</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0137_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>putting_the_usb_in_the_computer</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand picks up a small black USB-C adapter from a desk and inserts it into the side of a gray MacBook laptop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_137" value="yes" id="intent_137_yes">
+                            <label for="intent_137_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_137" value="no" id="intent_137_no">
+                            <label for="intent_137_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_137" value="yes" id="endstate_137_yes">
+                            <label for="endstate_137_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_137" value="no" id="endstate_137_no">
+                            <label for="endstate_137_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_137" value="yes" id="complete_137_yes">
+                            <label for="complete_137_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_137" value="no" id="complete_137_no">
+                            <label for="complete_137_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_137" value="yes" id="perfect_137_yes">
+                            <label for="perfect_137_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_137" value="no" id="perfect_137_no">
+                            <label for="perfect_137_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-138">
+            <div class="video-title">Video 138</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0138_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>reach_into_bottle</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand in a grey sweatshirt lowers into the open blue vitamin bottle sitting on a white plastic cart.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_138" value="yes" id="intent_138_yes">
+                            <label for="intent_138_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_138" value="no" id="intent_138_no">
+                            <label for="intent_138_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_138" value="yes" id="endstate_138_yes">
+                            <label for="endstate_138_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_138" value="no" id="endstate_138_no">
+                            <label for="endstate_138_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_138" value="yes" id="complete_138_yes">
+                            <label for="complete_138_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_138" value="no" id="complete_138_no">
+                            <label for="complete_138_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_138" value="yes" id="perfect_138_yes">
+                            <label for="perfect_138_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_138" value="no" id="perfect_138_no">
+                            <label for="perfect_138_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-139">
+            <div class="video-title">Video 139</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0139_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>remove_pot_lid_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand removes the glass lid from the black frying pan on the white stovetop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_139" value="yes" id="intent_139_yes">
+                            <label for="intent_139_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_139" value="no" id="intent_139_no">
+                            <label for="intent_139_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_139" value="yes" id="endstate_139_yes">
+                            <label for="endstate_139_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_139" value="no" id="endstate_139_no">
+                            <label for="endstate_139_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_139" value="yes" id="complete_139_yes">
+                            <label for="complete_139_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_139" value="no" id="complete_139_no">
+                            <label for="complete_139_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_139" value="yes" id="perfect_139_yes">
+                            <label for="perfect_139_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_139" value="no" id="perfect_139_no">
+                            <label for="perfect_139_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-140">
+            <div class="video-title">Video 140</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0140_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>scoop_paste_onto_finger</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand dips its index finger into an open tub of yellow petroleum jelly on a white bathroom countertop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_140" value="yes" id="intent_140_yes">
+                            <label for="intent_140_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_140" value="no" id="intent_140_no">
+                            <label for="intent_140_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_140" value="yes" id="endstate_140_yes">
+                            <label for="endstate_140_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_140" value="no" id="endstate_140_no">
+                            <label for="endstate_140_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_140" value="yes" id="complete_140_yes">
+                            <label for="complete_140_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_140" value="no" id="complete_140_no">
+                            <label for="complete_140_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_140" value="yes" id="perfect_140_yes">
+                            <label for="perfect_140_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_140" value="no" id="perfect_140_no">
+                            <label for="perfect_140_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-141">
+            <div class="video-title">Video 141</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0141_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>slide_open_door_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand slides open the glass door of a commercial refrigerator stocked with milk and juice cartons.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_141" value="yes" id="intent_141_yes">
+                            <label for="intent_141_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_141" value="no" id="intent_141_no">
+                            <label for="intent_141_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_141" value="yes" id="endstate_141_yes">
+                            <label for="endstate_141_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_141" value="no" id="endstate_141_no">
+                            <label for="endstate_141_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_141" value="yes" id="complete_141_yes">
+                            <label for="complete_141_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_141" value="no" id="complete_141_no">
+                            <label for="complete_141_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_141" value="yes" id="perfect_141_yes">
+                            <label for="perfect_141_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_141" value="no" id="perfect_141_no">
+                            <label for="perfect_141_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-142">
+            <div class="video-title">Video 142</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0142_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>squeezing_the_dish_soap_on_the_sponge</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand picks up the bottle of dish soap from the kitchen counter and squeezes soap onto the yellow sponge.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_142" value="yes" id="intent_142_yes">
+                            <label for="intent_142_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_142" value="no" id="intent_142_no">
+                            <label for="intent_142_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_142" value="yes" id="endstate_142_yes">
+                            <label for="endstate_142_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_142" value="no" id="endstate_142_no">
+                            <label for="endstate_142_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_142" value="yes" id="complete_142_yes">
+                            <label for="complete_142_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_142" value="no" id="complete_142_no">
+                            <label for="complete_142_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_142" value="yes" id="perfect_142_yes">
+                            <label for="perfect_142_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_142" value="no" id="perfect_142_no">
+                            <label for="perfect_142_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-143">
+            <div class="video-title">Video 143</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0143_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>stacking_the_clear_cup_on_the_other_cups</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand lifts an upside-down clear cup from the speckled countertop and stacks it onto the other clear cups in the black wire rack.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_143" value="yes" id="intent_143_yes">
+                            <label for="intent_143_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_143" value="no" id="intent_143_no">
+                            <label for="intent_143_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_143" value="yes" id="endstate_143_yes">
+                            <label for="endstate_143_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_143" value="no" id="endstate_143_no">
+                            <label for="endstate_143_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_143" value="yes" id="complete_143_yes">
+                            <label for="complete_143_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_143" value="no" id="complete_143_no">
+                            <label for="complete_143_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_143" value="yes" id="perfect_143_yes">
+                            <label for="perfect_143_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_143" value="no" id="perfect_143_no">
+                            <label for="perfect_143_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-144">
+            <div class="video-title">Video 144</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0144_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>staple_papers_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand presses a black stapler onto the top right corner of a document resting on a dark, speckled countertop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_144" value="yes" id="intent_144_yes">
+                            <label for="intent_144_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_144" value="no" id="intent_144_no">
+                            <label for="intent_144_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_144" value="yes" id="endstate_144_yes">
+                            <label for="endstate_144_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_144" value="no" id="endstate_144_no">
+                            <label for="endstate_144_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_144" value="yes" id="complete_144_yes">
+                            <label for="complete_144_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_144" value="no" id="complete_144_no">
+                            <label for="complete_144_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_144" value="yes" id="perfect_144_yes">
+                            <label for="perfect_144_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_144" value="no" id="perfect_144_no">
+                            <label for="perfect_144_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-145">
+            <div class="video-title">Video 145</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0145_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_out _paper_under_red_box_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand pulls a sheet of white paper from underneath a red box of Barry's Tea.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_145" value="yes" id="intent_145_yes">
+                            <label for="intent_145_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_145" value="no" id="intent_145_no">
+                            <label for="intent_145_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_145" value="yes" id="endstate_145_yes">
+                            <label for="endstate_145_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_145" value="no" id="endstate_145_no">
+                            <label for="endstate_145_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_145" value="yes" id="complete_145_yes">
+                            <label for="complete_145_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_145" value="no" id="complete_145_no">
+                            <label for="complete_145_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_145" value="yes" id="perfect_145_yes">
+                            <label for="perfect_145_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_145" value="no" id="perfect_145_no">
+                            <label for="perfect_145_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-146">
+            <div class="video-title">Video 146</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0146_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_out_a_piece_of_gum</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A left hand takes a piece of white gum out of an open blue packet on a wooden table.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_146" value="yes" id="intent_146_yes">
+                            <label for="intent_146_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_146" value="no" id="intent_146_no">
+                            <label for="intent_146_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_146" value="yes" id="endstate_146_yes">
+                            <label for="endstate_146_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_146" value="no" id="endstate_146_no">
+                            <label for="endstate_146_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_146" value="yes" id="complete_146_yes">
+                            <label for="complete_146_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_146" value="no" id="complete_146_no">
+                            <label for="complete_146_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_146" value="yes" id="perfect_146_yes">
+                            <label for="perfect_146_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_146" value="no" id="perfect_146_no">
+                            <label for="perfect_146_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-147">
+            <div class="video-title">Video 147</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0147_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_out_blue_book_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A person's right hand takes out the blue book titled 'molecular genetics of bacteria' from a row of books on a wooden shelf.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_147" value="yes" id="intent_147_yes">
+                            <label for="intent_147_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_147" value="no" id="intent_147_no">
+                            <label for="intent_147_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_147" value="yes" id="endstate_147_yes">
+                            <label for="endstate_147_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_147" value="no" id="endstate_147_no">
+                            <label for="endstate_147_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_147" value="yes" id="complete_147_yes">
+                            <label for="complete_147_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_147" value="no" id="complete_147_no">
+                            <label for="complete_147_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_147" value="yes" id="perfect_147_yes">
+                            <label for="perfect_147_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_147" value="no" id="perfect_147_no">
+                            <label for="perfect_147_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-148">
+            <div class="video-title">Video 148</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0148_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_out_extinguisher_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand reaches into a red-framed cabinet mounted on a gray wall to take out the red fire extinguisher.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_148" value="yes" id="intent_148_yes">
+                            <label for="intent_148_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_148" value="no" id="intent_148_no">
+                            <label for="intent_148_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_148" value="yes" id="endstate_148_yes">
+                            <label for="endstate_148_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_148" value="no" id="endstate_148_no">
+                            <label for="endstate_148_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_148" value="yes" id="complete_148_yes">
+                            <label for="complete_148_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_148" value="no" id="complete_148_no">
+                            <label for="complete_148_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_148" value="yes" id="perfect_148_yes">
+                            <label for="perfect_148_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_148" value="no" id="perfect_148_no">
+                            <label for="perfect_148_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-149">
+            <div class="video-title">Video 149</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0149_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_out_straw</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A left hand pulls the clear plastic straw out of the lid of a cup on a white desk.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_149" value="yes" id="intent_149_yes">
+                            <label for="intent_149_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_149" value="no" id="intent_149_no">
+                            <label for="intent_149_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_149" value="yes" id="endstate_149_yes">
+                            <label for="endstate_149_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_149" value="no" id="endstate_149_no">
+                            <label for="endstate_149_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_149" value="yes" id="complete_149_yes">
+                            <label for="complete_149_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_149" value="no" id="complete_149_no">
+                            <label for="complete_149_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_149" value="yes" id="perfect_149_yes">
+                            <label for="perfect_149_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_149" value="no" id="perfect_149_no">
+                            <label for="perfect_149_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-150">
+            <div class="video-title">Video 150</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0150_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_out_the_chair</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand pulls a three-legged wooden stool out from a small, grey-walled work cubicle.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_150" value="yes" id="intent_150_yes">
+                            <label for="intent_150_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_150" value="no" id="intent_150_no">
+                            <label for="intent_150_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_150" value="yes" id="endstate_150_yes">
+                            <label for="endstate_150_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_150" value="no" id="endstate_150_no">
+                            <label for="endstate_150_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_150" value="yes" id="complete_150_yes">
+                            <label for="complete_150_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_150" value="no" id="complete_150_no">
+                            <label for="complete_150_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_150" value="yes" id="perfect_150_yes">
+                            <label for="perfect_150_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_150" value="no" id="perfect_150_no">
+                            <label for="perfect_150_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-151">
+            <div class="video-title">Video 151</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0151_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_plate</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand takes a white, square plate from the top of the leftmost stack on the dark countertop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_151" value="yes" id="intent_151_yes">
+                            <label for="intent_151_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_151" value="no" id="intent_151_no">
+                            <label for="intent_151_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_151" value="yes" id="endstate_151_yes">
+                            <label for="endstate_151_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_151" value="no" id="endstate_151_no">
+                            <label for="endstate_151_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_151" value="yes" id="complete_151_yes">
+                            <label for="complete_151_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_151" value="no" id="complete_151_no">
+                            <label for="complete_151_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_151" value="yes" id="perfect_151_yes">
+                            <label for="perfect_151_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_151" value="no" id="perfect_151_no">
+                            <label for="perfect_151_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-152">
+            <div class="video-title">Video 152</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0152_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_pot_away_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand lifts the small, copper-colored pot with a glass lid from the front right burner of a white stove.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_152" value="yes" id="intent_152_yes">
+                            <label for="intent_152_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_152" value="no" id="intent_152_no">
+                            <label for="intent_152_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_152" value="yes" id="endstate_152_yes">
+                            <label for="endstate_152_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_152" value="no" id="endstate_152_no">
+                            <label for="endstate_152_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_152" value="yes" id="complete_152_yes">
+                            <label for="complete_152_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_152" value="no" id="complete_152_no">
+                            <label for="complete_152_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_152" value="yes" id="perfect_152_yes">
+                            <label for="perfect_152_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_152" value="no" id="perfect_152_no">
+                            <label for="perfect_152_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-153">
+            <div class="video-title">Video 153</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0153_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>take_spray_bottle</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A left hand reaches toward the yellow caddy on a janitorial cart to take one of the white spray bottles.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_153" value="yes" id="intent_153_yes">
+                            <label for="intent_153_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_153" value="no" id="intent_153_no">
+                            <label for="intent_153_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_153" value="yes" id="endstate_153_yes">
+                            <label for="endstate_153_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_153" value="no" id="endstate_153_no">
+                            <label for="endstate_153_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_153" value="yes" id="complete_153_yes">
+                            <label for="complete_153_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_153" value="no" id="complete_153_no">
+                            <label for="complete_153_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_153" value="yes" id="perfect_153_yes">
+                            <label for="perfect_153_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_153" value="no" id="perfect_153_no">
+                            <label for="perfect_153_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-154">
+            <div class="video-title">Video 154</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0154_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>taking_milk_out_of_the_fridge</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand pulls a plastic jug of Berkeley reduced-fat milk from the top shelf of an open Frigidaire refrigerator.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_154" value="yes" id="intent_154_yes">
+                            <label for="intent_154_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_154" value="no" id="intent_154_no">
+                            <label for="intent_154_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_154" value="yes" id="endstate_154_yes">
+                            <label for="endstate_154_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_154" value="no" id="endstate_154_no">
+                            <label for="endstate_154_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_154" value="yes" id="complete_154_yes">
+                            <label for="complete_154_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_154" value="no" id="complete_154_no">
+                            <label for="complete_154_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_154" value="yes" id="perfect_154_yes">
+                            <label for="perfect_154_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_154" value="no" id="perfect_154_no">
+                            <label for="perfect_154_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-155">
+            <div class="video-title">Video 155</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0155_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>taking_the_lid_off_the_jar</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand lifts the lid from a white ceramic jar labeled 'TREATS' sitting on a dark countertop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_155" value="yes" id="intent_155_yes">
+                            <label for="intent_155_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_155" value="no" id="intent_155_no">
+                            <label for="intent_155_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_155" value="yes" id="endstate_155_yes">
+                            <label for="endstate_155_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_155" value="no" id="endstate_155_no">
+                            <label for="endstate_155_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_155" value="yes" id="complete_155_yes">
+                            <label for="complete_155_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_155" value="no" id="complete_155_no">
+                            <label for="complete_155_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_155" value="yes" id="perfect_155_yes">
+                            <label for="perfect_155_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_155" value="no" id="perfect_155_no">
+                            <label for="perfect_155_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-156">
+            <div class="video-title">Video 156</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0156_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>tear_down_the_poster</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand removes a paper sign with a bear logo and the text 'Berkeley Physics Lab' from a glass door.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_156" value="yes" id="intent_156_yes">
+                            <label for="intent_156_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_156" value="no" id="intent_156_no">
+                            <label for="intent_156_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_156" value="yes" id="endstate_156_yes">
+                            <label for="endstate_156_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_156" value="no" id="endstate_156_no">
+                            <label for="endstate_156_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_156" value="yes" id="complete_156_yes">
+                            <label for="complete_156_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_156" value="no" id="complete_156_no">
+                            <label for="complete_156_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_156" value="yes" id="perfect_156_yes">
+                            <label for="perfect_156_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_156" value="no" id="perfect_156_no">
+                            <label for="perfect_156_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-157">
+            <div class="video-title">Video 157</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0157_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>tear_toilet_paper</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand tears off a sheet of toilet paper from the roll in the recessed, wall-mounted holder.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_157" value="yes" id="intent_157_yes">
+                            <label for="intent_157_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_157" value="no" id="intent_157_no">
+                            <label for="intent_157_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_157" value="yes" id="endstate_157_yes">
+                            <label for="endstate_157_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_157" value="no" id="endstate_157_no">
+                            <label for="endstate_157_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_157" value="yes" id="complete_157_yes">
+                            <label for="complete_157_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_157" value="no" id="complete_157_no">
+                            <label for="complete_157_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_157" value="yes" id="perfect_157_yes">
+                            <label for="perfect_157_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_157" value="no" id="perfect_157_no">
+                            <label for="perfect_157_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-158">
+            <div class="video-title">Video 158</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0158_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>throw_trash_into_bin</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A person's left hand deposits a crumpled piece of white paper into the green bin labeled 'COMPOST'.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_158" value="yes" id="intent_158_yes">
+                            <label for="intent_158_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_158" value="no" id="intent_158_no">
+                            <label for="intent_158_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_158" value="yes" id="endstate_158_yes">
+                            <label for="endstate_158_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_158" value="no" id="endstate_158_no">
+                            <label for="endstate_158_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_158" value="yes" id="complete_158_yes">
+                            <label for="complete_158_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_158" value="no" id="complete_158_no">
+                            <label for="complete_158_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_158" value="yes" id="perfect_158_yes">
+                            <label for="perfect_158_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_158" value="no" id="perfect_158_no">
+                            <label for="perfect_158_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-159">
+            <div class="video-title">Video 159</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0159_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>throwing_the_paper_into_the_bin</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand flicks a small, crumpled piece of paper towards a distant blue recycling bin in a hallway.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_159" value="yes" id="intent_159_yes">
+                            <label for="intent_159_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_159" value="no" id="intent_159_no">
+                            <label for="intent_159_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_159" value="yes" id="endstate_159_yes">
+                            <label for="endstate_159_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_159" value="no" id="endstate_159_no">
+                            <label for="endstate_159_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_159" value="yes" id="complete_159_yes">
+                            <label for="complete_159_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_159" value="no" id="complete_159_no">
+                            <label for="complete_159_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_159" value="yes" id="perfect_159_yes">
+                            <label for="perfect_159_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_159" value="no" id="perfect_159_no">
+                            <label for="perfect_159_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-160">
+            <div class="video-title">Video 160</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0160_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turn_door_handle_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand turns the round, silver doorknob on the white door.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_160" value="yes" id="intent_160_yes">
+                            <label for="intent_160_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_160" value="no" id="intent_160_no">
+                            <label for="intent_160_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_160" value="yes" id="endstate_160_yes">
+                            <label for="endstate_160_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_160" value="no" id="endstate_160_no">
+                            <label for="endstate_160_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_160" value="yes" id="complete_160_yes">
+                            <label for="complete_160_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_160" value="no" id="complete_160_no">
+                            <label for="complete_160_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_160" value="yes" id="perfect_160_yes">
+                            <label for="perfect_160_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_160" value="no" id="perfect_160_no">
+                            <label for="perfect_160_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-161">
+            <div class="video-title">Video 161</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0161_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turn_fan_dial_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand turns the black dial on top of a silver Patton fan, which is in front of shelves stocked with boxes of instant noodles.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_161" value="yes" id="intent_161_yes">
+                            <label for="intent_161_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_161" value="no" id="intent_161_no">
+                            <label for="intent_161_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_161" value="yes" id="endstate_161_yes">
+                            <label for="endstate_161_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_161" value="no" id="endstate_161_no">
+                            <label for="endstate_161_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_161" value="yes" id="complete_161_yes">
+                            <label for="complete_161_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_161" value="no" id="complete_161_no">
+                            <label for="complete_161_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_161" value="yes" id="perfect_161_yes">
+                            <label for="perfect_161_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_161" value="no" id="perfect_161_no">
+                            <label for="perfect_161_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-162">
+            <div class="video-title">Video 162</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0162_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turn_knob_of_washing_machine</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A left hand in a gray sweatshirt turns the central silver control dial on a gray LG washing machine.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_162" value="yes" id="intent_162_yes">
+                            <label for="intent_162_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_162" value="no" id="intent_162_no">
+                            <label for="intent_162_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_162" value="yes" id="endstate_162_yes">
+                            <label for="endstate_162_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_162" value="no" id="endstate_162_no">
+                            <label for="endstate_162_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_162" value="yes" id="complete_162_yes">
+                            <label for="complete_162_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_162" value="no" id="complete_162_no">
+                            <label for="complete_162_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_162" value="yes" id="perfect_162_yes">
+                            <label for="perfect_162_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_162" value="no" id="perfect_162_no">
+                            <label for="perfect_162_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-163">
+            <div class="video-title">Video 163</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0163_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turn_off_the_lamp</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand moves to turn off the black desk lamp by operating the silver switch on top of the lampshade.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_163" value="yes" id="intent_163_yes">
+                            <label for="intent_163_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_163" value="no" id="intent_163_no">
+                            <label for="intent_163_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_163" value="yes" id="endstate_163_yes">
+                            <label for="endstate_163_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_163" value="no" id="endstate_163_no">
+                            <label for="endstate_163_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_163" value="yes" id="complete_163_yes">
+                            <label for="complete_163_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_163" value="no" id="complete_163_no">
+                            <label for="complete_163_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_163" value="yes" id="perfect_163_yes">
+                            <label for="perfect_163_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_163" value="no" id="perfect_163_no">
+                            <label for="perfect_163_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-164">
+            <div class="video-title">Video 164</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0164_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turn_the_lock</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand turns the thumb-turn of the brass deadbolt lock on a white door.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_164" value="yes" id="intent_164_yes">
+                            <label for="intent_164_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_164" value="no" id="intent_164_no">
+                            <label for="intent_164_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_164" value="yes" id="endstate_164_yes">
+                            <label for="endstate_164_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_164" value="no" id="endstate_164_no">
+                            <label for="endstate_164_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_164" value="yes" id="complete_164_yes">
+                            <label for="complete_164_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_164" value="no" id="complete_164_no">
+                            <label for="complete_164_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_164" value="yes" id="perfect_164_yes">
+                            <label for="perfect_164_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_164" value="no" id="perfect_164_no">
+                            <label for="perfect_164_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-165">
+            <div class="video-title">Video 165</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0165_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turn_wheel_on_pipe_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand turns the black wheel on top of the large, central red valve.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_165" value="yes" id="intent_165_yes">
+                            <label for="intent_165_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_165" value="no" id="intent_165_no">
+                            <label for="intent_165_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_165" value="yes" id="endstate_165_yes">
+                            <label for="endstate_165_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_165" value="no" id="endstate_165_no">
+                            <label for="endstate_165_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_165" value="yes" id="complete_165_yes">
+                            <label for="complete_165_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_165" value="no" id="complete_165_no">
+                            <label for="complete_165_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_165" value="yes" id="perfect_165_yes">
+                            <label for="perfect_165_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_165" value="no" id="perfect_165_no">
+                            <label for="perfect_165_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-166">
+            <div class="video-title">Video 166</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0166_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turning_on_the_lamp_by_pulling_the_chain</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A hand pulls the silver ball chain of a black, rectangular floor lamp.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_166" value="yes" id="intent_166_yes">
+                            <label for="intent_166_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_166" value="no" id="intent_166_no">
+                            <label for="intent_166_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_166" value="yes" id="endstate_166_yes">
+                            <label for="endstate_166_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_166" value="no" id="endstate_166_no">
+                            <label for="endstate_166_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_166" value="yes" id="complete_166_yes">
+                            <label for="complete_166_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_166" value="no" id="complete_166_no">
+                            <label for="complete_166_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_166" value="yes" id="perfect_166_yes">
+                            <label for="perfect_166_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_166" value="no" id="perfect_166_no">
+                            <label for="perfect_166_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-167">
+            <div class="video-title">Video 167</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0167_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turning_on_the_shower</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A person's right hand turns the lever of a chrome shower faucet, mounted on a wall with white and colorful decorative tiles.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_167" value="yes" id="intent_167_yes">
+                            <label for="intent_167_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_167" value="no" id="intent_167_no">
+                            <label for="intent_167_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_167" value="yes" id="endstate_167_yes">
+                            <label for="endstate_167_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_167" value="no" id="endstate_167_no">
+                            <label for="endstate_167_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_167" value="yes" id="complete_167_yes">
+                            <label for="complete_167_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_167" value="no" id="complete_167_no">
+                            <label for="complete_167_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_167" value="yes" id="perfect_167_yes">
+                            <label for="perfect_167_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_167" value="no" id="perfect_167_no">
+                            <label for="perfect_167_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-168">
+            <div class="video-title">Video 168</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0168_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turning_on_the_sink</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand moves the single-lever handle on the brushed metal kitchen faucet to turn on the water.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_168" value="yes" id="intent_168_yes">
+                            <label for="intent_168_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_168" value="no" id="intent_168_no">
+                            <label for="intent_168_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_168" value="yes" id="endstate_168_yes">
+                            <label for="endstate_168_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_168" value="no" id="endstate_168_no">
+                            <label for="endstate_168_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_168" value="yes" id="complete_168_yes">
+                            <label for="complete_168_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_168" value="no" id="complete_168_no">
+                            <label for="complete_168_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_168" value="yes" id="perfect_168_yes">
+                            <label for="perfect_168_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_168" value="no" id="perfect_168_no">
+                            <label for="perfect_168_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-169">
+            <div class="video-title">Video 169</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0169_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>turning_the_key_in_the_lock</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand turns a key counter-clockwise in the lock of a grey parcel locker labeled '5P'.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_169" value="yes" id="intent_169_yes">
+                            <label for="intent_169_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_169" value="no" id="intent_169_no">
+                            <label for="intent_169_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_169" value="yes" id="endstate_169_yes">
+                            <label for="endstate_169_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_169" value="no" id="endstate_169_no">
+                            <label for="endstate_169_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_169" value="yes" id="complete_169_yes">
+                            <label for="complete_169_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_169" value="no" id="complete_169_no">
+                            <label for="complete_169_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_169" value="yes" id="perfect_169_yes">
+                            <label for="perfect_169_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_169" value="no" id="perfect_169_no">
+                            <label for="perfect_169_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-170">
+            <div class="video-title">Video 170</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0170_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>twist_off_closure_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A person twists the grey and red cap off a white bottle lying on a grey chair.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_170" value="yes" id="intent_170_yes">
+                            <label for="intent_170_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_170" value="no" id="intent_170_no">
+                            <label for="intent_170_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_170" value="yes" id="endstate_170_yes">
+                            <label for="endstate_170_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_170" value="no" id="endstate_170_no">
+                            <label for="endstate_170_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_170" value="yes" id="complete_170_yes">
+                            <label for="complete_170_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_170" value="no" id="complete_170_no">
+                            <label for="complete_170_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_170" value="yes" id="perfect_170_yes">
+                            <label for="perfect_170_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_170" value="no" id="perfect_170_no">
+                            <label for="perfect_170_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-171">
+            <div class="video-title">Video 171</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0171_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>unscrew_gallon_jug_cap_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand unscrews the white cap from a gallon jug of blue Peak windshield washer fluid on a green-marbled counter.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_171" value="yes" id="intent_171_yes">
+                            <label for="intent_171_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_171" value="no" id="intent_171_no">
+                            <label for="intent_171_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_171" value="yes" id="endstate_171_yes">
+                            <label for="endstate_171_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_171" value="no" id="endstate_171_no">
+                            <label for="endstate_171_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_171" value="yes" id="complete_171_yes">
+                            <label for="complete_171_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_171" value="no" id="complete_171_no">
+                            <label for="complete_171_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_171" value="yes" id="perfect_171_yes">
+                            <label for="perfect_171_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_171" value="no" id="perfect_171_no">
+                            <label for="perfect_171_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-172">
+            <div class="video-title">Video 172</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0172_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>unscrewing_the_lid_on_the_jar</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand unscrews the white lid from a large, translucent plastic jar resting on a dark, speckled countertop.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_172" value="yes" id="intent_172_yes">
+                            <label for="intent_172_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_172" value="no" id="intent_172_no">
+                            <label for="intent_172_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_172" value="yes" id="endstate_172_yes">
+                            <label for="endstate_172_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_172" value="no" id="endstate_172_no">
+                            <label for="endstate_172_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_172" value="yes" id="complete_172_yes">
+                            <label for="complete_172_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_172" value="no" id="complete_172_no">
+                            <label for="complete_172_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_172" value="yes" id="perfect_172_yes">
+                            <label for="perfect_172_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_172" value="no" id="perfect_172_no">
+                            <label for="perfect_172_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-173">
+            <div class="video-title">Video 173</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0173_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>use_key_to_open_bike_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A person inserts a key into the keyhole of a grey cable lock that is securing a black bicycle to a metal bike rack.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_173" value="yes" id="intent_173_yes">
+                            <label for="intent_173_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_173" value="no" id="intent_173_no">
+                            <label for="intent_173_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_173" value="yes" id="endstate_173_yes">
+                            <label for="endstate_173_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_173" value="no" id="endstate_173_no">
+                            <label for="endstate_173_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_173" value="yes" id="complete_173_yes">
+                            <label for="complete_173_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_173" value="no" id="complete_173_no">
+                            <label for="complete_173_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_173" value="yes" id="perfect_173_yes">
+                            <label for="perfect_173_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_173" value="no" id="perfect_173_no">
+                            <label for="perfect_173_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-174">
+            <div class="video-title">Video 174</div>
+            
+            <video controls preload="metadata">
+                <source src="https://huggingface.co/datasets/YunjinZhang/eiwm_user_study/resolve/main/eval/test_hf_eval/0174_generated.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="captions-container">
+                <div class="caption">
+                    <div class="caption-label">Original Caption:</div>
+                    <div>use_key_to_open_door_0</div>
+                </div>
+                <div class="caption">
+                    <div class="caption-label">Generated Caption:</div>
+                    <div>A right hand holding a key with a black plastic head inserts it into the deadbolt lock on a white paneled door.</div>
+                </div>
+            </div>
+            
+            <div class="evaluation-container">
+                <div class="evaluation-title">Please evaluate this video:</div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">1. Correct Intent (Made the contact with the specified object about the correct location):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="intent_174" value="yes" id="intent_174_yes">
+                            <label for="intent_174_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="intent_174" value="no" id="intent_174_no">
+                            <label for="intent_174_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">2. Correct End State (End state is correct):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_174" value="yes" id="endstate_174_yes">
+                            <label for="endstate_174_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="endstate_174" value="no" id="endstate_174_no">
+                            <label for="endstate_174_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">3. Task Complete (Correct Intent + Correct End state with roughly realistic physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="complete_174" value="yes" id="complete_174_yes">
+                            <label for="complete_174_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="complete_174" value="no" id="complete_174_no">
+                            <label for="complete_174_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criterion">
+                    <div class="criterion-question">4. Perfect Task Complete (Correct everything with good physics):</div>
+                    <div class="criterion-options">
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_174" value="yes" id="perfect_174_yes">
+                            <label for="perfect_174_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="perfect_174" value="no" id="perfect_174_no">
+                            <label for="perfect_174_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="export-section">
+            <button class="export-button" onclick="exportResults()">Export Results</button>
+            <div class="progress" id="progress">Evaluated: <span id="completed">0</span>/42</div>
+        </div>
+        
+        <script>
+            // Track evaluation progress
+            function updateProgress() {
+                const totalVideos = 42;
+                const sampleIds = ['133', '134', '135', '136', '137', '138', '139', '140', '141', '142', '143', '144', '145', '146', '147', '148', '149', '150', '151', '152', '153', '154', '155', '156', '157', '158', '159', '160', '161', '162', '163', '164', '165', '166', '167', '168', '169', '170', '171', '172', '173', '174'];
+                
+                let completed = 0;
+                sampleIds.forEach(sampleId => {
+                    const criteria = ['intent', 'endstate', 'complete', 'perfect'];
+                    let videoComplete = true;
+                    
+                    criteria.forEach(criterion => {
+                        const radios = document.getElementsByName(criterion + '_' + sampleId);
+                        let answered = false;
+                        radios.forEach(radio => {
+                            if (radio.checked) answered = true;
+                        });
+                        if (!answered) videoComplete = false;
+                    });
+                    
+                    if (videoComplete) completed++;
+                });
+                
+                document.getElementById('completed').textContent = completed;
+            }
+            
+            // Add event listeners to all radio buttons
+            document.addEventListener('DOMContentLoaded', function() {
+                const radios = document.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.addEventListener('change', updateProgress);
+                });
+                updateProgress();
+            });
+            
+            function exportResults() {
+                const sampleIds = ['133', '134', '135', '136', '137', '138', '139', '140', '141', '142', '143', '144', '145', '146', '147', '148', '149', '150', '151', '152', '153', '154', '155', '156', '157', '158', '159', '160', '161', '162', '163', '164', '165', '166', '167', '168', '169', '170', '171', '172', '173', '174'];
+                const results = {
+                    timestamp: new Date().toISOString(),
+                    total_videos: sampleIds.length,
+                    evaluations: {},
+                    summary: {}
+                };
+                
+                // Collect individual evaluations
+                sampleIds.forEach(sampleId => {
+                    const evaluation = {};
+                    const criteria = ['intent', 'endstate', 'complete', 'perfect'];
+                    
+                    criteria.forEach(criterion => {
+                        const radios = document.getElementsByName(criterion + '_' + sampleId);
+                        radios.forEach(radio => {
+                            if (radio.checked) {
+                                evaluation[criterion] = radio.value === 'yes';
+                            }
+                        });
+                    });
+                    
+                    results.evaluations[sampleId] = evaluation;
+                });
+                
+                // Calculate summary statistics
+                const criteria = ['intent', 'endstate', 'complete', 'perfect'];
+                criteria.forEach(criterion => {
+                    let yesCount = 0;
+                    let totalCount = 0;
+                    
+                    sampleIds.forEach(sampleId => {
+                        if (results.evaluations[sampleId][criterion] !== undefined) {
+                            totalCount++;
+                            if (results.evaluations[sampleId][criterion]) {
+                                yesCount++;
+                            }
+                        }
+                    });
+                    
+                    results.summary[criterion + '_pass_rate'] = totalCount > 0 ? yesCount / totalCount : 0;
+                    results.summary[criterion + '_count'] = { yes: yesCount, no: totalCount - yesCount, total: totalCount };
+                });
+                
+                // Download results as JSON
+                const dataStr = JSON.stringify(results, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'user_study_results_' + new Date().toISOString().split('T')[0] + '.json';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                
+                alert('Results exported successfully!');
+            }
+        </script>
+    </body>
+    </html>
+    
