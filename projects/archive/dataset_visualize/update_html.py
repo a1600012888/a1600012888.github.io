@@ -64,7 +64,7 @@ def download_videos_and_update_html(html_file_path):
 
 if __name__ == '__main__':
     # The name of your original HTML file
-    input_html_file = 'model_3_index_0_100_user_study.html'
+    input_html_file = 'model_1_userstudy_idx_0_100.html'
 
     if os.path.exists(input_html_file):
         download_videos_and_update_html(input_html_file)
